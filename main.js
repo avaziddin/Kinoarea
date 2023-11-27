@@ -25,3 +25,4 @@ function reload(arr, place) {
 		place.append(li)
 	}
 }
+console.log("Hello");
