@@ -7,7 +7,7 @@
     text-decoration: none;
 }
 
-li {
+.ul_reload li {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -25,13 +25,13 @@ main {
     background-color: rgb(154, 184, 197);
 }
 
-li:hover {
+.ul_reload li:hover {
     filter: sepia(100%) hue-rotate(190deg) saturate(500%);
     cursor: pointer;
     transition: .1s linear;
 }
 
-ul {
+.ul_reload {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
