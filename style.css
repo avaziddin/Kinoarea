@@ -22,7 +22,7 @@ main img {
 }
 
 main {
-    background-color: rgb(154, 184, 197);
+    background: #000;
 }
 
 .ul_reload li:hover {
