@@ -115,4 +115,50 @@ main {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Gilroy;
+    text-decoration: none;
+}
+body {
+    background-color: #1E2538;
+}
+
+.genres_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 50px;
+}
+.genres_box h1 {
+    font-weight: 900;
+    font-size: 65px;
+    color: white;
+    text-align: center;
+}
+.genres_box img {
+    width: 50px;
+    height: 2px;
+    object-fit: contain;
+}
+.genres_box_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: rgb(157, 156, 156);
+    gap: 20px;
+    text-align: center;
+}
+.genres_box_inner p {
+    cursor: pointer;
+}
+.genres_box_inner p:hover {
+    color: rgb(204, 203, 203);
+}
+.active_genre {
+    color: white;
 }

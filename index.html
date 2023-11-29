@@ -11,17 +11,28 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/fonts/Qanelas/stylesheet.css" />
-        <link rel="stylesheet" href="/styles/main.scss" />
-	<script
-	src="https://kit.fontawesome.com/96461bcffe.js"
-	crossorigin="anonymous"
-></script>
+	<link rel="stylesheet" href="/styles/main.scss" />
+	<script src="https://kit.fontawesome.com/96461bcffe.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<main>
 		<section>
 			<div class="container">
+			<div class="genres_box">
+				<h1>Сейчас в кино</h1>
+				<img src="img/line.png" alt="">
+
+				<div class="genres_box_inner">
+					<p class="active_genre">Все</p>
+					<p>Боевики</p>
+					<p>Приключения</p>
+					<p>Комедии</p>
+					<p>Фантастика</p>
+					<p>Триллеры</p>
+					<p>Драма</p>
+				</div>
+			</div>
 				<ul class="ul_reload"></ul>
 				<div class="div_btn">
 					<button class="btn"><a href="">Все новинки</a></button>
@@ -36,30 +47,30 @@
 			<img src="/img/close.svg" alt="close" />
 		</button>
 
+
+
+		<!-- <ul>
+		<li>
+			<img src="" alt="">
+			<span></span>
+		</li>
+	</ul> -->
+
 		<div class="modal__wrapper">
 			<h1 class="logo">
 				<img src="/img/kinoarea_logo.svg" alt="logo" />
 				<p>
-					<span class="kino">Kino</span
-					><span class="area">area</span>
+					<span class="kino">Kino</span><span class="area">area</span>
 				</p>
 			</h1>
 
 			<div class="search__query">
 				<form name="searchForm">
-					<input
-						type="search"
-						name="searchQuery"
-						autocomplete="off"
-						id="searchQuery"
-						placeholder="What are you looking for..."
-					/>
+					<input type="search" name="searchQuery" autocomplete="off" id="searchQuery"
+						placeholder="What are you looking for..." />
 
 					<button type="button" class="searchSettings">
-						<img
-							src="/img/search_settings.svg"
-							alt="search settings"
-						/>
+						<img src="/img/search_settings.svg" alt="search settings" />
 					</button>
 
 					<button type="submit" class="searchButton">
@@ -84,16 +95,8 @@
 			<h1>Войти</h1>
 
 			<form name="loginForm">
-				<input
-					type="text"
-					name="login"
-					placeholder="Логин, почта или телефон"
-				/>
-				<input
-					type="text"
-					name="password"
-					placeholder="Ваш Пароль"
-				/>
+				<input type="text" name="login" placeholder="Логин, почта или телефон" />
+				<input type="text" name="password" placeholder="Ваш Пароль" />
 				<button class="loginButton" type="submit">Войти</button>
 				<button class="registerButton" type="button">
 					Зарегистрироваться
@@ -132,35 +135,15 @@
 			<form name="registerForm">
 				<input type="text" name="name" placeholder="Имя" />
 				<input type="text" name="surname" placeholder="Фамилия" />
-				<input
-					type="text"
-					name="login"
-					placeholder="Придумайте логин"
-				/>
-				<input
-					type="password"
-					name="login"
-					placeholder="Придумайте пароль"
-				/>
-				<input
-					type="password"
-					name="login"
-					placeholder="Повторите пароль"
-				/>
-				<input
-					type="text"
-					name="emailOrPhone"
-					placeholder="Номер телефона или e-mail"
-				/>
+				<input type="text" name="login" placeholder="Придумайте логин" />
+				<input type="password" name="login" placeholder="Придумайте пароль" />
+				<input type="password" name="login" placeholder="Повторите пароль" />
+				<input type="text" name="emailOrPhone" placeholder="Номер телефона или e-mail" />
 
 				<div class="agreements">
 					<label for="agreement">
-						<input
-							type="checkbox"
-							name="agreement"
-							id="agreement"
-						/>
-						
+						<input type="checkbox" name="agreement" id="agreement" />
+
 						<span class="check"></span>
 
 						<p>
@@ -170,11 +153,7 @@
 					</label>
 
 					<label for="personalData">
-						<input
-							type="checkbox"
-							name="personalData"
-							id="personalData"
-						/>
+						<input type="checkbox" name="personalData" id="personalData" />
 
 						<span class="check"></span>
 
@@ -200,25 +179,17 @@
 		<div class="modal__wrapper">
 			<h1>Восстановить пароль</h1>
 			<form name="recoverPassword">
-				<input type="text" name="emailORPhone" id="emailORPhone" placeholder="Почта или номер телефон"/>
+				<input type="text" name="emailORPhone" id="emailORPhone" placeholder="Почта или номер телефон" />
 				<div class="checkCode">
 					<button type="button" class="sendCode">Отправить</button>
-					<input type="text" name="code" id="code" placeholder="Полученный код"/>
+					<input type="text" name="code" id="code" placeholder="Полученный код" />
 				</div>
 				<button type="submit" class="next">Далее</button>
 			</form>
 
 			<form name="newPassword">
-				<input
-					type="text"
-					name="newPassword"
-					placeholder="Придумайте новый пароль "
-				/>
-				<input
-					type="text"
-					name="repeatPassword"
-					placeholder="Повторите новый пароль "
-				/>
+				<input type="text" name="newPassword" placeholder="Придумайте новый пароль " />
+				<input type="text" name="repeatPassword" placeholder="Повторите новый пароль " />
 				<button type="submit" class="done">Готово!</button>
 			</form>
 		</div>

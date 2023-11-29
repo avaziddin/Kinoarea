@@ -11,7 +11,15 @@ axios.get('https://api.themoviedb.org/3/movie/now_playing?language=ru', {
 	}
 })
 	.then(res => reload(res.data.results, ul))
+// import axios from "axios"
+// const ul = document.querySelector('ul')
 
+// axios.get('https://api.themoviedb.org/3/movie/now_playing?language=ru', {
+// 		headers: {
+// 			Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
+// 		}
+// 	})
+// 	.then(res => reload(res.data.results, ul))
 
 function reload(arr, place) {
 	place.innerHTML = ""
@@ -54,3 +62,21 @@ function reload(arr, place) {
 	}
 }
 
+// 		span.innerHTML = item.title
+// 		img.src = "https://image.tmdb.org/t/p/original" + item.poster_path
+
+// 		li.append(img, span)
+// 		place.append(li)
+// 	}
+// }
+
+let genre = document.querySelectorAll("p");
+
+genre.forEach((element) => {
+  element.onclick = () => {
+    genre.forEach((element) => {
+		element.classList.remove("active_genre");
+    });
+	element.classList.add("active_genre");
+  };
+});
