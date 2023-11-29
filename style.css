@@ -121,9 +121,6 @@ main {
     font-family: Gilroy;
     text-decoration: none;
 }
-body {
-    background-color: #1E2538;
-}
 
 .genres_box {
     display: flex;
