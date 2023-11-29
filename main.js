@@ -1,5 +1,8 @@
+import { renderHeader } from "./modules/renders";
 import axios from "axios"
 const ul = document.querySelector('ul')
+
+renderHeader()
 
 axios.get('https://api.themoviedb.org/3/movie/now_playing?language=ru', {
 		headers: {
@@ -25,3 +28,4 @@ function reload(arr, place) {
 		place.append(li)
 	}
 }
+
