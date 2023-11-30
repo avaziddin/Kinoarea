@@ -1,27 +1,43 @@
-import axios from "axios"
+import { getData } from "./modules/http";
+import {
+	renderHeader
+} from "./modules/renders";
+import { reload } from "./modules/ui";
+
 const ul = document.querySelector('ul')
+let genre = document.querySelectorAll("p");
+let box = document.querySelector(".genres_box_inner")
 
-axios.get('https://api.themoviedb.org/3/movie/now_playing?language=ru', {
-		headers: {
-			Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
+renderHeader()
+
+getData('/movie/upcoming')
+	.then(res => reload(res?.data?.results, ul))
+
+getData('/genre/movie/list')
+	.then(res => reload_genres(res.data.genres, box))
+
+function reload_genres(arr, place) {
+
+	arr.forEach(e => {
+		let p = document.createElement("p")
+
+		p.innerHTML = e.name
+
+		place.append(p)
+
+		p.onclick = () => {
+			let id = e.id
+			getData('/discover/movie?with_genres=' + id)
+				.then(res => console.log(res))
 		}
-	})
-	.then(res => reload(res.data.results, ul))
+	});
 
-
-function reload(arr, place) {
-	place.innerHTML = ""
-
-	for (let item of arr) {
-		let li = document.createElement('li')
-		let img = document.createElement('img')
-		let span = document.createElement('span')
-
-
-		span.innerHTML = item.title
-		img.src = "https://image.tmdb.org/t/p/original" + item.poster_path
-
-		li.append(img, span)
-		place.append(li)
-	}
 }
+// genre.forEach((element) => {
+// 	element.onclick = () => {
+// 		genre.forEach((element) => {
+// 			element.classList.remove("active_genre");
+// 		});
+// 		element.classList.add("active_genre");
+// 	};
+// });
