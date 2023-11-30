@@ -1,26 +1,17 @@
+import { loadEvents } from "./modules/events";
 import { getData } from "./modules/http";
-import {
-	renderHeader
-} from "./modules/renders";
+import { renderGenres, renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
 import { reload } from "./modules/ui";
 
-const ul = document.querySelector('ul')
-let genre = document.querySelectorAll("p");
-
-renderHeader()
-
-getData('/movie/upcoming')
-	.then(res => reload(res?.data?.results, ul))
-
-getData('/genre/movie/list')
-	.then(res => console.log(res.data))
+export const ul = document.querySelector("ul");
+let genres = document.querySelector(".genres_box_inner");
+let popularMoviesSelector = document.querySelector(".year__list");
+let popularMovies = document.querySelector(".swiper-wrapper");
+renderHeader();
+loadEvents();
+getData("/movie/upcoming").then((res) => reload(res?.data?.results, ul));
 
 
-// genre.forEach((element) => {
-// 	element.onclick = () => {
-// 		genre.forEach((element) => {
-// 			element.classList.remove("active_genre");
-// 		});
-// 		element.classList.add("active_genre");
-// 	};
-// });
+renderGenres(genres);
+renderPopularSelector(popularMoviesSelector);
+renderPopularMovies(popularMovies)
