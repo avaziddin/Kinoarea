@@ -21,6 +21,6 @@ loadEvents();
 
 
 
-renderGenres(genres);
+renderGenres(genre);
 renderPopularSelector(popularMoviesSelector);
 renderPopularMovies(popularMovies)
