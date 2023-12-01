@@ -1,26 +1,46 @@
+import { loadEvents } from "./modules/events";
 import { getData } from "./modules/http";
-import {
-	renderHeader
-} from "./modules/renders";
-import { reload } from "./modules/ui";
+import { reload_genres } from "./modules/ui";
+import { renderGenres, renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
+import { reload_actors } from "./modules/ui";
 
-const ul = document.querySelector('ul')
-let genre = document.querySelectorAll("p");
+export const ul = document.querySelector('ul')
+export const h1 = document.querySelector('.h1')
+export let btn = document.querySelector(".btn")
+let genre = document.querySelector(".genres_box_inner");
+let popularMoviesSelector = document.querySelector(".year__list");
+let popularMovies = document.querySelector(".swiper-wrapper");
 
-renderHeader()
 
-getData('/movie/upcoming')
-	.then(res => reload(res?.data?.results, ul))
+let actor_interval = document.querySelectorAll('p')
+
+renderHeader();
 
 getData('/genre/movie/list')
-	.then(res => console.log(res.data))
+	.then(res => reload_genres(res?.data?.genres, genre))
 
 
-// genre.forEach((element) => {
-// 	element.onclick = () => {
-// 		genre.forEach((element) => {
-// 			element.classList.remove("active_genre");
-// 		});
-// 		element.classList.add("active_genre");
-// 	};
-// });
+
+getData("/person/popular").then((res) => reload_actors(res?.data?.results));
+
+
+
+
+loadEvents();
+
+
+
+renderGenres(genre);
+renderPopularSelector(popularMoviesSelector);
+renderPopularMovies(popularMovies)
+
+
+
+actor_interval.forEach((element) => {
+	element.onclick = () => {
+		actor_interval.forEach((element) => {
+			element.classList.remove("active_genre");
+		});
+		element.classList.add("active_genre");
+	};
+});
