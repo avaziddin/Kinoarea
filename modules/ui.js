@@ -1,4 +1,3 @@
-import { h1, ul, btn } from "../main"
 import { getData } from "./http"
 
 const img_ip = import.meta.env.VITE_IMAGE_URL
@@ -135,7 +134,7 @@ export function reload_actors(arr, place) {
 let actor_block_one = document.querySelector(".actor_block_one");
 
 
-export function reload_genres(arr, place) {
+export function reload_genres(arr, place, btn) {
   place.innerHTML = ""
   for (let item of arr) {
     let li = document.createElement('li')
@@ -148,15 +147,14 @@ export function reload_genres(arr, place) {
 
     li.onclick = () => {
       li.classList.toggle('active_genre')
-      console.log(item.id)
-      h1.innerHTML = item.name
+      // console.log(item.id)
+      // h1.innerHTML = item.name
       getData('/discover/movie?with_genres=' + item.id)
-        .then(res => reload(res?.data?.results.slice(0, 8), ul))
+        .then(res => reload(res?.data?.results.slice(0, 8), document.querySelector('.ul_reload')))
       btn.onclick = (e) => {
         e.preventDefault()
-        console.log(item.id);
         getData('/discover/movie?with_genres=' + item.id)
-          .then(res => reload(res?.data?.results, ul))
+          .then(res => reload(res?.data?.results, document.querySelector('.ul_reload')))
       }
     }
 

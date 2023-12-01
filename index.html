@@ -5,7 +5,7 @@
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Vite App</title>
-        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./style.scss" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -18,6 +18,23 @@
             src="https://kit.fontawesome.com/96461bcffe.js"
             crossorigin="anonymous"
         ></script>
+		<style>
+			.no-video::before {
+				content: "no video";
+				position: absolute;
+				top: 0px;
+				left: 0;
+				background-color: rgba(255, 0, 0, 0.5);
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: 600;
+				font-size: 24px;
+			}
+		</style>
     </head>
 
     <body>
@@ -28,16 +45,40 @@
 		<section>
 			<div class="container">
 				<div class="genres_box">
-					<h1 class="h1">Сейчас в кино</h1>
+					<h1>Сейчас в кино</h1>
 					<img src="img/line.png" alt="">
 
-					<div class="genres_box_inner"></div>
+					<div class="genres_box_inner">
+					</div>
 				</div>
 				<ul class="ul_reload"></ul>
 				<div class="div_btn">
 					<button class="btn">
 						<p>Все новинки</p>
 					</button>
+				</div>
+
+				<div class="trailer">
+					<div class="tr_header">
+						<h1 class="f">Новые трейлеры</h1>
+						<a href="#">Все трейлеры</a>
+					</div>
+
+					<div class="tr_main">
+						<iframe width="100%" height="500" src="">
+						</iframe>
+						<div class="tr_rating">
+							<h2 class="f">Fosaj</h2>
+							<div class="t_rating">
+								<p class="f">499</p>
+								<p class="f">599</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="trailer_min">
+
+					</div>
 				</div>
 			</div>
 		</section>

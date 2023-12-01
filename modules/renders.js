@@ -5,7 +5,6 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { ul } from "../main";
 import { getData } from "./http";
 import { reload } from "./ui";
 import kinoareaLogo from "/img/kinoarea_logo.svg";
@@ -262,42 +261,42 @@ function renderHeaderSearch(place) {
     };
 }
 
-export async function renderGenres(place) {
-    place.innerHTML = "";
+// export async function renderGenres(place) {
+//     place.innerHTML = "";
 
-    let genres = await getData("/genre/movie/list");
-    for (const genre of genres.data.genres) {
-        let li = document.createElement("p");
-        li.innerHTML = `${genre.name.capitalize()}`;
-        li.classList.add("genre");
-        li.dataset.id = genre.id;
+//     let genres = await getData("/genre/movie/list");
+//     for (const genre of genres.data.genres) {
+//         let li = document.createElement("p");
+//         li.innerHTML = `${genre.name.capitalize()}`;
+//         li.classList.add("genre");
+//         li.dataset.id = genre.id;
 
-        place.append(li);
+//         place.append(li);
 
-        if (genres.data.genres.indexOf(genre) == 0) {
-            li.classList.add("active_genre");
-        }
+//         if (genres.data.genres.indexOf(genre) == 0) {
+//             li.classList.add("active_genre");
+//         }
 
-        li.onclick = async () => {
-            if (li.classList.contains("active_genre")) {
-                li.classList.remove("active_genre");
-            } else {
-                li.classList.add("active_genre");
-            }
-            let ids = [];
-            let actives = document.querySelectorAll(".active_genre");
-            actives.forEach((element) => {
-                ids.push(element.dataset.id);
-            });
+//         li.onclick = async () => {
+//             if (li.classList.contains("active_genre")) {
+//                 li.classList.remove("active_genre");
+//             } else {
+//                 li.classList.add("active_genre");
+//             }
+//             let ids = [];
+//             let actives = document.querySelectorAll(".active_genre");
+//             actives.forEach((element) => {
+//                 ids.push(element.dataset.id);
+//             });
 
-            let newResponse = await getData(
-                `/discover/movie?with_genres=${ids.join(",")}`
-            );
+//             let newResponse = await getData(
+//                 `/discover/movie?with_genres=${ids.join(",")}`
+//             );
 
-            reload(newResponse.data.results, ul);
-        };
-    }
-}
+//             reload(newResponse.data.results, ul);
+//         };
+//     }
+// }
 
 export async function renderPopularSelector(place) {
     place.innerHTML = "";
@@ -356,7 +355,7 @@ export async function renderPopularMovies(place) {
         let info = document.createElement("div");
         let title = document.createElement("h3");
         let genre = document.createElement("p");
-        let genres = await genresList(movie.genre_ids);
+        // let genres = await genresList(movie.genre_ids);
 
         li.classList.add("swiper-slide");
         overlay.classList.add("overlay");
@@ -373,7 +372,7 @@ export async function renderPopularMovies(place) {
         title.classList.add("title");
         title.innerHTML = movie.title;
         genre.classList.add("genres");
-        genre.innerHTML = genres.join(", ");
+        // genre.innerHTML = genres.join(", ");
 
         place.append(li);
         li.append(img_wrapper, info);
