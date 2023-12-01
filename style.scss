@@ -21,15 +21,15 @@ main img {
     border-radius: 10px;
 }
 
-main {
-    background: #000;
-}
 
 .ul_reload li:hover {
     filter: sepia(100%) hue-rotate(190deg) saturate(500%);
     cursor: pointer;
     transition: .1s linear;
 }
+
+
+
 
 .ul_reload {
     display: grid;
@@ -108,7 +108,7 @@ main {
     background: #000;
 }
 
-.btn a {
+.btn p {
     color: #FFF;
 }
 
@@ -124,17 +124,19 @@ main {
 }
 
 .genres_box {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     gap: 20px;
+    width: 1200px;
     padding: 50px 0;
 }
 
 .genres_box h1 {
     font-weight: 900;
-    font-size: 50px;
+    font-size: 34px;
     color: white;
     text-align: center;
 }
@@ -149,6 +151,8 @@ main {
     display: flex;
     align-items: center;
     flex-direction: row;
+    width: 800px;
+    overflow-x: scroll;
     color: rgb(157, 156, 156);
     gap: 20px;
     text-align: center;
@@ -168,6 +172,10 @@ main {
 
 .genres_box_inner p:hover {
     color: rgb(204, 203, 203);
+}
+
+.genres_box_inner::-webkit-scrollbar {
+    height: 5px;
 }
 
 .active_genre {

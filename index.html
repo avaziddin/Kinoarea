@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+        <link rel="stylesheet" href="./style.scss" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/fonts/Qanelas/stylesheet.css" />
+        <link rel="stylesheet" href="/styles/main.scss" />
+        <script
+            src="https://kit.fontawesome.com/96461bcffe.js"
+            crossorigin="anonymous"
+        ></script>
+		<style>
+			.no-video::before {
+				content: "no video";
+				position: absolute;
+				top: 0px;
+				left: 0;
+				background-color: rgba(255, 0, 0, 0.5);
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: 600;
+				font-size: 24px;
+			}
+		</style>
+    </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Vite App</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/fonts/Qanelas/stylesheet.css" />
-	<link rel="stylesheet" href="/styles/main.scss" />
-	<link rel="stylesheet" href="./style.scss">
-	<script src="https://kit.fontawesome.com/96461bcffe.js" crossorigin="anonymous"></script>
-	<style>
-		.no-video::before {
-			content: "no video";
-			position: absolute;
-			top: 0px;
-			left: 0;
-			background-color: rgba(255, 0, 0, 0.5);
-			width: 100%;
-			height: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-weight: 600;
-			font-size: 24px;
-		}
-	</style>
+    <body>
+        <main>
+      
 
-</head>
 
-<body>
-	<main>
 		<section>
 			<div class="container">
 				<div class="genres_box">
@@ -46,7 +53,9 @@
 				</div>
 				<ul class="ul_reload"></ul>
 				<div class="div_btn">
-					<button class="btn"><a href="">Все новинки</a></button>
+					<button class="btn">
+						<p>Все новинки</p>
+					</button>
 				</div>
 
 				<div class="trailer">
@@ -73,162 +82,296 @@
 				</div>
 			</div>
 		</section>
-	</main>
+                        
+            
 
-	<div class="overlay"></div>
-	<div class="modal__search">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
-
-
-
-		<!-- <ul>
-		<li>
-			<img src="" alt="">
-			<span></span>
-		</li>
-	</ul> -->
-
-		<div class="modal__wrapper">
-			<h1 class="logo">
-				<img src="/img/kinoarea_logo.svg" alt="logo" />
-				<p>
-					<span class="kino">Kino</span><span class="area">area</span>
-				</p>
-			</h1>
-
-			<div class="search__query">
-				<form name="searchForm">
-					<input type="search" name="searchQuery" autocomplete="off" id="searchQuery"
-						placeholder="What are you looking for..." />
-
-					<button type="button" class="searchSettings">
-						<img src="/img/search_settings.svg" alt="search settings" />
-					</button>
-
-					<button type="submit" class="searchButton">
-						<img src="/img/search.svg" alt="search" />
-					</button>
-				</form>
-			</div>
-
-			<div class="search__results">
-				<ul class="search__list__films"></ul>
-				<ul class="search__list__actors"></ul>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal__login">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
-
-		<div class="modal__wrapper">
-			<h1>Войти</h1>
-
-			<form name="loginForm">
-				<input type="text" name="login" placeholder="Логин, почта или телефон" />
-				<input type="text" name="password" placeholder="Ваш Пароль" />
-				<button class="loginButton" type="submit">Войти</button>
-				<button class="registerButton" type="button">
-					Зарегистрироваться
-				</button>
-
-				<a href="#" class="forgotPassword">Восстановить пароль</a>
-			</form>
-
-			<div class="login_other">
-				<a href="#" class="login_via" data-target="vk">
-					<span class="fab fa-vk"></span>
-				</a>
-
-				<a href="#" class="login_via" data-target="facebook">
-					<span class="fab fa-facebook"></span>
-				</a>
-
-				<a href="#" class="login_via" data-target="google">
-					<span class="fab fa-google"> </span>
-				</a>
-
-				<a href="#" class="login_via" data-target="twitter">
-					<span class="fab fa-twitter"></span>
-				</a>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal__register">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
-
-		<div class="modal__wrapper">
-			<h1>Зарегистрироваться</h1>
-			<form name="registerForm">
-				<input type="text" name="name" placeholder="Имя" />
-				<input type="text" name="surname" placeholder="Фамилия" />
-				<input type="text" name="login" placeholder="Придумайте логин" />
-				<input type="password" name="login" placeholder="Придумайте пароль" />
-				<input type="password" name="login" placeholder="Повторите пароль" />
-				<input type="text" name="emailOrPhone" placeholder="Номер телефона или e-mail" />
-
-				<div class="agreements">
-					<label for="agreement">
-						<input type="checkbox" name="agreement" id="agreement" />
-
-						<span class="check"></span>
-
-						<p>
-							Соглашаюсь на условия
-							<a href="#">политики конфиденциальности</a>
-						</p>
-					</label>
-
-					<label for="personalData">
-						<input type="checkbox" name="personalData" id="personalData" />
-
-						<span class="check"></span>
-
-						<p>
-							Я согласен на
-							<a href="#">обработку персональных данных</a>
-						</p>
-					</label>
-				</div>
-
-				<button class="registerButton" type="submit">
-					Зарегистрироваться
-				</button>
-			</form>
-		</div>
-	</div>
-
-	<div class="modal__forgot__password">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
-
-		<div class="modal__wrapper">
-			<h1>Восстановить пароль</h1>
-			<form name="recoverPassword">
-				<input type="text" name="emailORPhone" id="emailORPhone" placeholder="Почта или номер телефон" />
-				<div class="checkCode">
-					<button type="button" class="sendCode">Отправить</button>
-					<input type="text" name="code" id="code" placeholder="Полученный код" />
-				</div>
-				<button type="submit" class="next">Далее</button>
-			</form>
-
-			<form name="newPassword">
-				<input type="text" name="newPassword" placeholder="Придумайте новый пароль " />
-				<input type="text" name="repeatPassword" placeholder="Повторите новый пароль " />
-				<button type="submit" class="done">Готово!</button>
-			</form>
-		</div>
+            <section class="popular">
+                <div class="container">
+                    <div class="header">
+                        <h1>Популярные фильмы</h1>
 
 
-	</div>
-	<script type="module" src="/main.js"></script>
-</body>
+     
+          <!----------------------actors---------------------->
+         
+          <!----------------------actors---------------------->
+
+                        <hr />
+
+                        <ul class="year__list"></ul>
+                    </div>
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">Slide 5</div>
+                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                            <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div>
+                        </div>
+
+                        <div class="swiper-button-prev">
+                            <img src="/img/arrow-left.svg" alt="arrow_right" />
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="/img/arrow-right.svg" alt="arrow_left" />
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="actors_box">
+                <div class="container">
+                    <div class="actors_header">
+                        <h1>Популярные персоны</h1>
+                        <div class="actors_header_intervals">
+                          <p class="for_year active_genre">За год</p>
+                          <p class="for_month">За месяц</p>
+                          <p class="for_week">За неделю</p>
+                        </div>
+                      </div>
+          
+                      <div class="actors_blocks">
+                        <div class="actor_block_one">
+                          <h1 class="actor_place_one">1-е место</h1>
+                          <div class="actors_names">
+                            <h2 class="actor_name_one">Квентин Тарантино</h2>
+                            <h3 class="actor_block_name">Quentin Tarantino</h3>
+                            <h4 class="actor_block_age">57 лет</h4>
+                          </div>
+                        </div>
+                        <div class="actor_block_two">
+                          <h1 class="actor_place_two">1-е место</h1>
+                          <div class="actors_names">
+                            <h2 class="actor_name_two">Квентин Тарантино</h2>
+                            <h3 class="actor_block_name_two">Quentin Tarantino</h3>
+                            <h4 class="actor_block_age_two">57 лет</h4>
+                          </div>
+                        </div>
+          
+                        <div class="actors_name_block">
+          
+          
+                          
+                      </div>
+          
+                    </div>
+                  </div>
+                </div>
+                
+
+        </main>
+
+        <div class="overlay"></div>
+        <div class="modal__search">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
+
+            <div class="modal__wrapper">
+                <h1 class="logo">
+                    <img src="/img/kinoarea_logo.svg" alt="logo" />
+                    <p>
+                        <span class="kino">Kino</span
+                        ><span class="area">area</span>
+                    </p>
+                </h1>
+
+                <div class="search__query">
+                    <form name="searchForm">
+                        <input
+                            type="search"
+                            name="searchQuery"
+                            autocomplete="off"
+                            id="searchQuery"
+                            placeholder="What are you looking for..."
+                        />
+
+                        <button type="button" class="searchSettings">
+                            <img
+                                src="/img/search_settings.svg"
+                                alt="search settings"
+                            />
+                        </button>
+
+                        <button type="submit" class="searchButton">
+                            <img src="/img/search.svg" alt="search" />
+                        </button>
+                    </form>
+                </div>
+
+                <div class="search__results">
+                    <ul class="search__list__films"></ul>
+                    <ul class="search__list__actors"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal__login">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
+
+            <div class="modal__wrapper">
+                <h1>Войти</h1>
+
+                <form name="loginForm">
+                    <input
+                        type="text"
+                        name="login"
+                        placeholder="Логин, почта или телефон"
+                    />
+                    <input
+                        type="text"
+                        name="password"
+                        placeholder="Ваш Пароль"
+                    />
+                    <button class="loginButton" type="submit">Войти</button>
+                    <button class="registerButton" type="button">
+                        Зарегистрироваться
+                    </button>
+
+                    <a href="#" class="forgotPassword">Восстановить пароль</a>
+                </form>
+
+                <div class="login_other">
+                    <a href="#" class="login_via" data-target="vk">
+                        <span class="fab fa-vk"></span>
+                    </a>
+
+                    <a href="#" class="login_via" data-target="facebook">
+                        <span class="fab fa-facebook"></span>
+                    </a>
+
+                    <a href="#" class="login_via" data-target="google">
+                        <span class="fab fa-google"> </span>
+                    </a>
+
+                    <a href="#" class="login_via" data-target="twitter">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal__register">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
+
+            <div class="modal__wrapper">
+                <h1>Зарегистрироваться</h1>
+                <form name="registerForm">
+                    <input type="text" name="name" placeholder="Имя" />
+                    <input type="text" name="surname" placeholder="Фамилия" />
+                    <input
+                        type="text"
+                        name="login"
+                        placeholder="Придумайте логин"
+                    />
+                    <input
+                        type="password"
+                        name="login"
+                        placeholder="Придумайте пароль"
+                    />
+                    <input
+                        type="password"
+                        name="login"
+                        placeholder="Повторите пароль"
+                    />
+                    <input
+                        type="text"
+                        name="emailOrPhone"
+                        placeholder="Номер телефона или e-mail"
+                    />
+
+                    <div class="agreements">
+                        <label for="agreement">
+                            <input
+                                type="checkbox"
+                                name="agreement"
+                                id="agreement"
+                            />
+
+                            <span class="check"></span>
+
+                            <p>
+                                Соглашаюсь на условия
+                                <a href="#">политики конфиденциальности</a>
+                            </p>
+                        </label>
+
+                        <label for="personalData">
+                            <input
+                                type="checkbox"
+                                name="personalData"
+                                id="personalData"
+                            />
+
+                            <span class="check"></span>
+
+                            <p>
+                                Я согласен на
+                                <a href="#">обработку персональных данных</a>
+                            </p>
+                        </label>
+                    </div>
+
+                    <button class="registerButton" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal__forgot__password">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
+
+            <div class="modal__wrapper">
+                <h1>Восстановить пароль</h1>
+                <form name="recoverPassword">
+                    <input
+                        type="text"
+                        name="emailORPhone"
+                        id="emailORPhone"
+                        placeholder="Почта или номер телефон"
+                    />
+                    <div class="checkCode">
+                        <button type="button" class="sendCode">
+                            Отправить
+                        </button>
+                        <input
+                            type="text"
+                            name="code"
+                            id="code"
+                            placeholder="Полученный код"
+                        />
+                    </div>
+                    <button type="submit" class="next">Далее</button>
+                </form>
+
+                <form name="newPassword">
+                    <input
+                        type="text"
+                        name="newPassword"
+                        placeholder="Придумайте новый пароль "
+                    />
+                    <input
+                        type="text"
+                        name="repeatPassword"
+                        placeholder="Повторите новый пароль "
+                    />
+                    <button type="submit" class="done">Готово!</button>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>

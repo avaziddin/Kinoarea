@@ -1,42 +1,27 @@
+import { loadEvents } from "./modules/events";
 import { getData } from "./modules/http";
-import {
-	renderHeader
-} from "./modules/renders";
-import { reload } from "./modules/ui";
+import { reload_genres } from "./modules/ui";
+import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
+import { reload_actors } from "./modules/ui";
 
 const ul = document.querySelector('ul')
 let genre = document.querySelectorAll("p");
 let box = document.querySelector(".genres_box_inner")
 let trailer_min = document.querySelector('.trailer_min')
 let iframe = document.querySelector('iframe')
+let popularMoviesSelector = document.querySelector('.year__list')
+let popularMovies = document.querySelector('.swiper-wrapper')
+let btn = document.querySelector('.btn')
 const img_ip = import.meta.env.VITE_IMAGE_URL
 const video_url = import.meta.env.VITE_VIDEO_URL
 
-renderHeader()
 
-getData('/movie/upcoming')
-	.then(res => reload(res?.data?.results, ul))
+let actor_interval = document.querySelectorAll('p')
+
+renderHeader();
 
 getData('/genre/movie/list')
-	.then(res => reload_genres(res.data.genres, box))
-
-function reload_genres(arr, place) {
-
-	arr.forEach(e => {
-		let p = document.createElement("p")
-
-		p.innerHTML = e.name
-
-		place.append(p)
-
-		p.onclick = () => {
-			let id = e.id
-			getData('/discover/movie?with_genres=' + id)
-				.then(res => console.log(res))
-		}
-	});
-
-}
+	.then(res => reload_genres(res?.data?.genres, box, btn))
 
 function showTrailer(data) {
 	console.log(video_url);
@@ -71,3 +56,26 @@ getData('/discover/movie')
 			}
 		}
 	})
+
+getData("/person/popular").then((res) => reload_actors(res?.data?.results));
+
+
+
+
+loadEvents();
+
+
+
+renderPopularSelector(popularMoviesSelector);
+renderPopularMovies(popularMovies)
+
+
+
+actor_interval.forEach((element) => {
+	element.onclick = () => {
+		actor_interval.forEach((element) => {
+			element.classList.remove("active_genre");
+		});
+		element.classList.add("active_genre");
+	};
+});

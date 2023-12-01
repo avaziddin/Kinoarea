@@ -13,6 +13,6 @@ export async function getData(path) {
 
         return res
     } catch (e) {
-        console.log({error: e});
+        console.log({ error: e });
     }
 }
