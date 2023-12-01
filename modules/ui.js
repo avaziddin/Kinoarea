@@ -1,8 +1,11 @@
+import { h1, ul, btn } from "../main"
+import { getData } from "./http"
+
 const img_ip = import.meta.env.VITE_IMAGE_URL
+
 
 export function reload(arr, place) {
 	place.innerHTML = ""
-
 	for (let item of arr) {
 		let li = document.createElement('li')
 		let img = document.createElement('img')
@@ -35,8 +38,32 @@ export function reload(arr, place) {
 		li.onmouseleave = () => {
 			button.classList.remove('btn_flex')
 		}
-		// button.onclick = () => {
-		// 	window.location.href = `https://www.themoviedb.org/movie/${item.id}`
-		// }
+	}
+}
+export function reload_genres(arr, place) {
+	place.innerHTML = ""
+	for (let item of arr) {
+		let li = document.createElement('li')
+
+		li.innerHTML = item.name
+		li.onclick = () => {
+			reload_genres(item.genres, place)
+		}
+		place.append(li)
+
+		li.onclick = () => {
+			li.classList.toggle('active_genre')
+			console.log(item.id)
+			h1.innerHTML = item.name
+			getData('/discover/movie?with_genres=' + item.id)
+				.then(res => reload(res?.data?.results.slice(0, 8), ul))
+			btn.onclick = (e) => {
+				e.preventDefault()
+				console.log(item.id);
+				getData('/discover/movie?with_genres=' + item.id)
+					.then(res => reload(res?.data?.results, ul))
+			}
+		}
+
 	}
 }

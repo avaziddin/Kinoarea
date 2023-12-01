@@ -1,26 +1,13 @@
 import { getData } from "./modules/http";
-import {
-	renderHeader
-} from "./modules/renders";
-import { reload } from "./modules/ui";
+import { renderHeader } from "./modules/renders";
+import { reload, reload_genres } from "./modules/ui";
 
-const ul = document.querySelector('ul')
-let genre = document.querySelectorAll("p");
+export const ul = document.querySelector('ul')
+export const h1 = document.querySelector('.h1')
+export let btn = document.querySelector(".btn")
+let genre = document.querySelector(".genres_box_inner");
 
 renderHeader()
 
-getData('/movie/upcoming')
-	.then(res => reload(res?.data?.results, ul))
-
 getData('/genre/movie/list')
-	.then(res => console.log(res.data))
-
-
-// genre.forEach((element) => {
-// 	element.onclick = () => {
-// 		genre.forEach((element) => {
-// 			element.classList.remove("active_genre");
-// 		});
-// 		element.classList.add("active_genre");
-// 	};
-// });
+	.then(res => reload_genres(res?.data?.genres, genre))

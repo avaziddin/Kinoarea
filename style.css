@@ -26,7 +26,7 @@ main {
 }
 
 .ul_reload li:hover {
-    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+    filter: brightness(1.5);
     cursor: pointer;
     transition: .1s linear;
 }
@@ -108,7 +108,7 @@ main {
     background: #000;
 }
 
-.btn a {
+.btn p {
     color: #FFF;
 }
 
@@ -124,39 +124,48 @@ main {
 }
 
 .genres_box {
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     gap: 20px;
+    width: 1200px;
     padding: 50px 0;
 }
+
 .genres_box h1 {
     font-weight: 900;
-    font-size: 50px;
+    font-size: 34px;
     color: white;
     text-align: center;
 }
+
 .genres_box img {
     width: 50px;
     height: 2px;
     object-fit: contain;
 }
+
 .genres_box_inner {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 800px;
+    overflow-x: scroll;
     color: rgb(157, 156, 156);
     gap: 20px;
     text-align: center;
 }
+
 .genres_box_inner p {
     cursor: pointer;
 }
+
 .genres_box_inner p:hover {
     color: rgb(204, 203, 203);
 }
+
 .active_genre {
     color: white;
 }
