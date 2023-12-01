@@ -21,9 +21,6 @@ main img {
     border-radius: 10px;
 }
 
-main {
-    background: #000;
-}
 
 .ul_reload li:hover {
     filter: brightness(1.5);
