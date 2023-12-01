@@ -33,6 +33,9 @@ function reload_genres(arr, place) {
 	});
 
 }
+
+getData('/movie/upcoming')
+	.then(res => console.log(res))
 // genre.forEach((element) => {
 // 	element.onclick = () => {
 // 		genre.forEach((element) => {
