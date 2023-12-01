@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/fonts/Qanelas/stylesheet.css" />
+        <link rel="stylesheet" href="/styles/main.scss" />
+        <script
+            src="https://kit.fontawesome.com/96461bcffe.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Vite App</title>
-	<link rel="stylesheet" href="./style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="/fonts/Qanelas/stylesheet.css" />
-	<link rel="stylesheet" href="/styles/main.scss" />
-	<script src="https://kit.fontawesome.com/96461bcffe.js" crossorigin="anonymous"></script>
-</head>
+    <body>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="genres_box">
+                        <h1>Сейчас в кино</h1>
+                        <img src="img/line.png" alt="" />
 
 <body>
 	<main>
@@ -33,152 +46,249 @@
 				</div>
 			</div>
 		</section>
-	</main>
+                        
+            
 
-	<div class="overlay"></div>
-	<div class="modal__search">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
+            <section class="popular">
+                <div class="container">
+                    <div class="header">
+                        <h1>Популярные фильмы</h1>
 
+                        <hr />
 
-		<div class="modal__wrapper">
-			<h1 class="logo">
-				<img src="/img/kinoarea_logo.svg" alt="logo" />
-				<p>
-					<span class="kino">Kino</span><span class="area">area</span>
-				</p>
-			</h1>
+                        <ul class="year__list"></ul>
+                    </div>
 
-			<div class="search__query">
-				<form name="searchForm">
-					<input type="search" name="searchQuery" autocomplete="off" id="searchQuery"
-						placeholder="What are you looking for..." />
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">Slide 1</div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">Slide 5</div>
+                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                            <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div>
+                        </div>
 
-					<button type="button" class="searchSettings">
-						<img src="/img/search_settings.svg" alt="search settings" />
-					</button>
+                        <div class="swiper-button-prev">
+                            <img src="/img/arrow-left.svg" alt="arrow_right" />
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="/img/arrow-right.svg" alt="arrow_left" />
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-					<button type="submit" class="searchButton">
-						<img src="/img/search.svg" alt="search" />
-					</button>
-				</form>
-			</div>
+        <div class="overlay"></div>
+        <div class="modal__search">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
 
-			<div class="search__results">
-				<ul class="search__list__films"></ul>
-				<ul class="search__list__actors"></ul>
-			</div>
-		</div>
-	</div>
+            <div class="modal__wrapper">
+                <h1 class="logo">
+                    <img src="/img/kinoarea_logo.svg" alt="logo" />
+                    <p>
+                        <span class="kino">Kino</span
+                        ><span class="area">area</span>
+                    </p>
+                </h1>
 
-	<div class="modal__login">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
+                <div class="search__query">
+                    <form name="searchForm">
+                        <input
+                            type="search"
+                            name="searchQuery"
+                            autocomplete="off"
+                            id="searchQuery"
+                            placeholder="What are you looking for..."
+                        />
 
-		<div class="modal__wrapper">
-			<h1>Войти</h1>
+                        <button type="button" class="searchSettings">
+                            <img
+                                src="/img/search_settings.svg"
+                                alt="search settings"
+                            />
+                        </button>
 
-			<form name="loginForm">
-				<input type="text" name="login" placeholder="Логин, почта или телефон" />
-				<input type="text" name="password" placeholder="Ваш Пароль" />
-				<button class="loginButton" type="submit">Войти</button>
-				<button class="registerButton" type="button">
-					Зарегистрироваться
-				</button>
+                        <button type="submit" class="searchButton">
+                            <img src="/img/search.svg" alt="search" />
+                        </button>
+                    </form>
+                </div>
 
-				<a href="#" class="forgotPassword">Восстановить пароль</a>
-			</form>
+                <div class="search__results">
+                    <ul class="search__list__films"></ul>
+                    <ul class="search__list__actors"></ul>
+                </div>
+            </div>
+        </div>
 
-			<div class="login_other">
-				<a href="#" class="login_via" data-target="vk">
-					<span class="fab fa-vk"></span>
-				</a>
+        <div class="modal__login">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
 
-				<a href="#" class="login_via" data-target="facebook">
-					<span class="fab fa-facebook"></span>
-				</a>
+            <div class="modal__wrapper">
+                <h1>Войти</h1>
 
-				<a href="#" class="login_via" data-target="google">
-					<span class="fab fa-google"> </span>
-				</a>
+                <form name="loginForm">
+                    <input
+                        type="text"
+                        name="login"
+                        placeholder="Логин, почта или телефон"
+                    />
+                    <input
+                        type="text"
+                        name="password"
+                        placeholder="Ваш Пароль"
+                    />
+                    <button class="loginButton" type="submit">Войти</button>
+                    <button class="registerButton" type="button">
+                        Зарегистрироваться
+                    </button>
 
-				<a href="#" class="login_via" data-target="twitter">
-					<span class="fab fa-twitter"></span>
-				</a>
-			</div>
-		</div>
-	</div>
+                    <a href="#" class="forgotPassword">Восстановить пароль</a>
+                </form>
 
-	<div class="modal__register">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
+                <div class="login_other">
+                    <a href="#" class="login_via" data-target="vk">
+                        <span class="fab fa-vk"></span>
+                    </a>
 
-		<div class="modal__wrapper">
-			<h1>Зарегистрироваться</h1>
-			<form name="registerForm">
-				<input type="text" name="name" placeholder="Имя" />
-				<input type="text" name="surname" placeholder="Фамилия" />
-				<input type="text" name="login" placeholder="Придумайте логин" />
-				<input type="password" name="login" placeholder="Придумайте пароль" />
-				<input type="password" name="login" placeholder="Повторите пароль" />
-				<input type="text" name="emailOrPhone" placeholder="Номер телефона или e-mail" />
+                    <a href="#" class="login_via" data-target="facebook">
+                        <span class="fab fa-facebook"></span>
+                    </a>
 
-				<div class="agreements">
-					<label for="agreement">
-						<input type="checkbox" name="agreement" id="agreement" />
+                    <a href="#" class="login_via" data-target="google">
+                        <span class="fab fa-google"> </span>
+                    </a>
 
-						<span class="check"></span>
+                    <a href="#" class="login_via" data-target="twitter">
+                        <span class="fab fa-twitter"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-						<p>
-							Соглашаюсь на условия
-							<a href="#">политики конфиденциальности</a>
-						</p>
-					</label>
+        <div class="modal__register">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
 
-					<label for="personalData">
-						<input type="checkbox" name="personalData" id="personalData" />
+            <div class="modal__wrapper">
+                <h1>Зарегистрироваться</h1>
+                <form name="registerForm">
+                    <input type="text" name="name" placeholder="Имя" />
+                    <input type="text" name="surname" placeholder="Фамилия" />
+                    <input
+                        type="text"
+                        name="login"
+                        placeholder="Придумайте логин"
+                    />
+                    <input
+                        type="password"
+                        name="login"
+                        placeholder="Придумайте пароль"
+                    />
+                    <input
+                        type="password"
+                        name="login"
+                        placeholder="Повторите пароль"
+                    />
+                    <input
+                        type="text"
+                        name="emailOrPhone"
+                        placeholder="Номер телефона или e-mail"
+                    />
 
-						<span class="check"></span>
+                    <div class="agreements">
+                        <label for="agreement">
+                            <input
+                                type="checkbox"
+                                name="agreement"
+                                id="agreement"
+                            />
 
-						<p>
-							Я согласен на
-							<a href="#">обработку персональных данных</a>
-						</p>
-					</label>
-				</div>
+                            <span class="check"></span>
 
-				<button class="registerButton" type="submit">
-					Зарегистрироваться
-				</button>
-			</form>
-		</div>
-	</div>
+                            <p>
+                                Соглашаюсь на условия
+                                <a href="#">политики конфиденциальности</a>
+                            </p>
+                        </label>
 
-	<div class="modal__forgot__password">
-		<button class="close">
-			<img src="/img/close.svg" alt="close" />
-		</button>
+                        <label for="personalData">
+                            <input
+                                type="checkbox"
+                                name="personalData"
+                                id="personalData"
+                            />
 
-		<div class="modal__wrapper">
-			<h1>Восстановить пароль</h1>
-			<form name="recoverPassword">
-				<input type="text" name="emailORPhone" id="emailORPhone" placeholder="Почта или номер телефон" />
-				<div class="checkCode">
-					<button type="button" class="sendCode">Отправить</button>
-					<input type="text" name="code" id="code" placeholder="Полученный код" />
-				</div>
-				<button type="submit" class="next">Далее</button>
-			</form>
+                            <span class="check"></span>
 
-			<form name="newPassword">
-				<input type="text" name="newPassword" placeholder="Придумайте новый пароль " />
-				<input type="text" name="repeatPassword" placeholder="Повторите новый пароль " />
-				<button type="submit" class="done">Готово!</button>
-			</form>
-		</div>
-	</div>
-	<script type="module" src="/main.js"></script>
-</body>
+                            <p>
+                                Я согласен на
+                                <a href="#">обработку персональных данных</a>
+                            </p>
+                        </label>
+                    </div>
+
+                    <button class="registerButton" type="submit">
+                        Зарегистрироваться
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal__forgot__password">
+            <button class="close">
+                <img src="/img/close.svg" alt="close" />
+            </button>
+
+            <div class="modal__wrapper">
+                <h1>Восстановить пароль</h1>
+                <form name="recoverPassword">
+                    <input
+                        type="text"
+                        name="emailORPhone"
+                        id="emailORPhone"
+                        placeholder="Почта или номер телефон"
+                    />
+                    <div class="checkCode">
+                        <button type="button" class="sendCode">
+                            Отправить
+                        </button>
+                        <input
+                            type="text"
+                            name="code"
+                            id="code"
+                            placeholder="Полученный код"
+                        />
+                    </div>
+                    <button type="submit" class="next">Далее</button>
+                </form>
+
+                <form name="newPassword">
+                    <input
+                        type="text"
+                        name="newPassword"
+                        placeholder="Придумайте новый пароль "
+                    />
+                    <input
+                        type="text"
+                        name="repeatPassword"
+                        placeholder="Повторите новый пароль "
+                    />
+                    <button type="submit" class="done">Готово!</button>
+                </form>
+            </div>
+        </div>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
