@@ -6,11 +6,15 @@
     text-decoration: none;
 }
 
+
 .wrap {
     width: 100%;
     margin: 0 auto;
     max-width: 1200px;
 }
+.genres_box_inner::-webkit-scrollbar {
+    width: 0;
+  }
 
 img {
     max-width: 100%;

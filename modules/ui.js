@@ -4,6 +4,7 @@ export function reload(arr, place) {
 	place.innerHTML = ""
 
 	for (let item of arr) {
+
 		let li = document.createElement('li')
 		let img = document.createElement('img')
 		let span = document.createElement('span')
@@ -40,3 +41,21 @@ export function reload(arr, place) {
 		// }
 	}
 }
+
+export function reload_genres(arr, place) {
+
+	arr.forEach(e => {
+	  let p = document.createElement("p")
+  
+	  p.innerHTML = e.name
+  
+	  place.append(p)
+  
+	  p.onclick = () => {
+		let id = e.id
+		getData('/discover/movie?with_genres=' + id)
+		  .then(res => console.log(res))
+	  }
+	});
+  
+  }

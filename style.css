@@ -144,12 +144,13 @@ main {
 }
 .genres_box_inner {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: row;
     color: rgb(157, 156, 156);
     gap: 20px;
     text-align: center;
+    max-width: 500px;
+    overflow-x: scroll;    
 }
 .genres_box_inner p {
     cursor: pointer;
