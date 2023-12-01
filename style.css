@@ -23,10 +23,13 @@ main img {
 
 
 .ul_reload li:hover {
-    filter: brightness(1.5);
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
     cursor: pointer;
     transition: .1s linear;
 }
+
+
+
 
 .ul_reload {
     display: grid;
@@ -161,6 +164,10 @@ main img {
 
 .genres_box_inner p:hover {
     color: rgb(204, 203, 203);
+}
+
+.genres_box_inner::-webkit-scrollbar {
+    height: 5px;
 }
 
 .active_genre {

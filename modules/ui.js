@@ -9,6 +9,7 @@ export function reload(arr, place) {
 
   for (let item of arr) {
     let li = document.createElement("li");
+    let div = document.createElement("div");
     let img = document.createElement("img");
     let span = document.createElement("span");
     let rating = document.createElement("span");
@@ -18,6 +19,7 @@ export function reload(arr, place) {
     span.classList.add("p");
     rating.classList.add("rating");
     button.classList.add("button");
+    div.classList.add('hover')
 
     span.innerHTML = item.title;
     img.src = img_ip + item.poster_path;
@@ -25,7 +27,8 @@ export function reload(arr, place) {
     a.innerHTML = "Карточка фильма";
     a.href = "/";
 
-    li.append(img, span, rating, button);
+    div.append(img)
+    li.append(div, span, rating, button);
     button.append(a);
     place.append(li);
 
@@ -72,7 +75,7 @@ export function reload_actors(arr, place) {
 
   let img1 = document.createElement("img");
   let img2 = document.createElement("img");
-  
+
   img1.classList.add("actor_pic");
   img2.classList.add("actor_pic");
 
@@ -94,7 +97,7 @@ export function reload_actors(arr, place) {
   actor_block_age.innerHTML = arr[0].known_for[2].vote_average
   actor_block_age_two.innerHTML = arr[1].known_for[2].vote_average
 
-    // console.log(arr);
+  // console.log(arr);
 
   for (let item of arr) {
     let actors_info = document.createElement("div");
@@ -133,29 +136,29 @@ let actor_block_one = document.querySelector(".actor_block_one");
 
 
 export function reload_genres(arr, place) {
-	place.innerHTML = ""
-	for (let item of arr) {
-		let li = document.createElement('li')
+  place.innerHTML = ""
+  for (let item of arr) {
+    let li = document.createElement('li')
 
-		li.innerHTML = item.name
-		li.onclick = () => {
-			reload_genres(item.genres, place)
-		}
-		place.append(li)
+    li.innerHTML = item.name
+    li.onclick = () => {
+      reload_genres(item.genres, place)
+    }
+    place.append(li)
 
-		li.onclick = () => {
-			li.classList.toggle('active_genre')
-			console.log(item.id)
-			h1.innerHTML = item.name
-			getData('/discover/movie?with_genres=' + item.id)
-				.then(res => reload(res?.data?.results.slice(0, 8), ul))
-			btn.onclick = (e) => {
-				e.preventDefault()
-				console.log(item.id);
-				getData('/discover/movie?with_genres=' + item.id)
-					.then(res => reload(res?.data?.results, ul))
-			}
-		}
+    li.onclick = () => {
+      li.classList.toggle('active_genre')
+      console.log(item.id)
+      h1.innerHTML = item.name
+      getData('/discover/movie?with_genres=' + item.id)
+        .then(res => reload(res?.data?.results.slice(0, 8), ul))
+      btn.onclick = (e) => {
+        e.preventDefault()
+        console.log(item.id);
+        getData('/discover/movie?with_genres=' + item.id)
+          .then(res => reload(res?.data?.results, ul))
+      }
+    }
 
-	}
+  }
 }
