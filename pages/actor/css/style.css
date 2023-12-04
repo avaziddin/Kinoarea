@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  background-color: #1e2538;
+}
+
+.actor_block {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.actor_block .actor_profile {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.actor_block .actor_profile .actor_profile_left {
+  width: 395px;
+  height: 540px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.actor_block .actor_profile .actor_profile_right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top .mini_block {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top .mini_block p {
+  color: #4f5b7c;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top .mini_block .active_ac_prof {
+  color: white;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top h1 {
+  padding: 10px 0 0;
+  font-weight: 900;
+  font-size: 50px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top h2 {
+  font-weight: 500;
+  font-size: 25px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_bottom .actor_profile_right_bottom_left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_bottom .actor_profile_right_bottom_right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_bottom .actor_profile_right_bottom_right .gray_color {
+  color: #6d717d;
+}
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_bottom .actor_profile_right_bottom_right p {
+  text-decoration: underline;
+  color: #f2f60f;
+}
+.actor_block .actor_profile .actor_profile_right .favorites_box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.actor_block .actor_profile .actor_profile_right .favorites_box p {
+  font-weight: 500;
+  font-size: 15px;
+  color: #e8e9eb;
+  text-decoration: none;
+}
+.actor_block .awards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.actor_block .awards .all_awards {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+.actor_block .awards .all_awards img {
+  height: 30px;
+  width: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.actor_block .awards .all_awards h1 {
+  color: white;
+}
+.actor_block .awards .awards_box {
+  display: flex;
+  gap: 20px;
+}
+.actor_block .awards .awards_box .award {
+  width: 340px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: #202d5a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.actor_block .awards .awards_box .award img {
+  height: 111px;
+  width: 44px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.actor_block .awards .awards_box .award .award_txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+.actor_block .awards .awards_box .award .award_txt h1 {
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+}
+.actor_block .awards .awards_box .award .award_txt h2 {
+  font-weight: 400;
+  font-size: 16px;
+  color: #f2f60f;
+}
+.actor_block .awards .awards_box .award .award_txt h3 {
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+}
+.actor_block .awards .awards_box::-webkit-scrollbar {
+  width: 0px;
+}/*# sourceMappingURL=style.css.map */

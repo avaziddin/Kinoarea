@@ -1,7 +1,6 @@
-import { getData } from "./http"
+import { getData } from "./http";
 
-const img_ip = import.meta.env.VITE_IMAGE_URL
-
+const img_ip = import.meta.env.VITE_IMAGE_URL;
 
 export function reload(arr, place) {
   place.innerHTML = "";
@@ -18,17 +17,21 @@ export function reload(arr, place) {
     span.classList.add("p");
     rating.classList.add("rating");
     button.classList.add("button");
-    div.classList.add('hover')
+    div.classList.add("hover");
 
     span.innerHTML = item.title;
     img.src = img_ip + item.poster_path;
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
-    a.href = "/";
 
-    div.append(img)
-    li.append(div, span, rating, button);
-    button.append(a);
+    let href = "/pages/movie/?id=" + item.id
+
+    console.log({item});
+    a.href = href;
+
+    div.append(img);
+    a.append(button);
+    li.append(div, span, rating, a);
     place.append(li);
 
     if (item.vote_average < " 5.0") {
@@ -43,6 +46,7 @@ export function reload(arr, place) {
     // button.onclick = () => {
     // 	window.location.href = `https://www.themoviedb.org/movie/${item.id}`
     // }
+ 
   }
 }
 
@@ -84,17 +88,17 @@ export function reload_actors(arr, place) {
   img1.src = img_ip + arr[0].profile_path;
   img2.src = img_ip + arr[1].profile_path;
 
-  actor_place_one.innerHTML = arr[0].popularity
-  actor_place_two.innerHTML = arr[1].popularity
+  actor_place_one.innerHTML = arr[0].popularity;
+  actor_place_two.innerHTML = arr[1].popularity;
 
-  actor_name_one.innerHTML = arr[0].name
-  actor_name_two.innerHTML = arr[1].name
+  actor_name_one.innerHTML = arr[0].name;
+  actor_name_two.innerHTML = arr[1].name;
 
-  actor_block_name.innerHTML = arr[0].original_name
-  actor_block_name_two.innerHTML = arr[1].original_name
+  actor_block_name.innerHTML = arr[0].original_name;
+  actor_block_name_two.innerHTML = arr[1].original_name;
 
-  actor_block_age.innerHTML = arr[0].known_for[2].vote_average
-  actor_block_age_two.innerHTML = arr[1].known_for[2].vote_average
+  actor_block_age.innerHTML = arr[0].known_for[2].vote_average;
+  actor_block_age_two.innerHTML = arr[1].known_for[2].vote_average;
 
   // console.log(arr);
 
@@ -133,30 +137,33 @@ export function reload_actors(arr, place) {
 
 let actor_block_one = document.querySelector(".actor_block_one");
 
-
 export function reload_genres(arr, place, btn) {
-  place.innerHTML = ""
+  place.innerHTML = "";
   for (let item of arr) {
-    let li = document.createElement('li')
+    let li = document.createElement("li");
 
-    li.innerHTML = item.name
+    li.innerHTML = item.name;
     li.onclick = () => {
-      reload_genres(item.genres, place)
-    }
-    place.append(li)
+      reload_genres(item.genres, place);
+    };
+    place.append(li);
 
     li.onclick = () => {
-      li.classList.toggle('active_genre')
+      li.classList.toggle("active_genre");
       // console.log(item.id)
       // h1.innerHTML = item.name
-      getData('/discover/movie?with_genres=' + item.id)
-        .then(res => reload(res?.data?.results.slice(0, 8), document.querySelector('.ul_reload')))
+      getData("/discover/movie?with_genres=" + item.id).then((res) =>
+        reload(
+          res?.data?.results.slice(0, 8),
+          document.querySelector(".ul_reload")
+        )
+      );
       btn.onclick = (e) => {
-        e.preventDefault()
-        getData('/discover/movie?with_genres=' + item.id)
-          .then(res => reload(res?.data?.results, document.querySelector('.ul_reload')))
-      }
-    }
-
+        e.preventDefault();
+        getData("/discover/movie?with_genres=" + item.id).then((res) =>
+          reload(res?.data?.results, document.querySelector(".ul_reload"))
+        );
+      };
+    };
   }
 }
