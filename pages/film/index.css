@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.container {
+    width: 100%;
+    padding: 30px 50px 30px 100px;
+    background: #1E2538;
+    height: 120vh;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding-bottom: 60px;
+
+
+}
+.title h4 {
+    font-weight: 900;
+    font-size: 20px;
+}
+.title h1 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+
+.boxi {
+    width: 100%;
+    display: flex;
+    gap: 42px;
+    flex-wrap: wrap;
+
+}
+
+.box {
+    width: 240px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box h2 {
+    color: white;
+    font-size: 17px;
+}
+
+.box p {
+    color: gray;
+    font-size: 14px;
+
+}
+
+.box span {
+    color:  rgba(242, 246, 15, 1);
+    font-size: 15px;
+
+}
