@@ -1,16 +1,18 @@
 import { loadEvents } from "./modules/events";
 import { getData } from "./modules/http";
 import { reload_genres } from "./modules/ui";
-import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
+import { renderHeader, renderSwiperMovies, renderPopularSelector } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
 
 const ul = document.querySelector('ul')
-let genre = document.querySelectorAll("p");
 let box = document.querySelector(".genres_box_inner")
 let trailer_min = document.querySelector('.trailer_min')
 let iframe = document.querySelector('iframe')
 let popularMoviesSelector = document.querySelector('.year__list')
-let popularMovies = document.querySelector('.swiper-wrapper')
+let popularMovies = document.querySelector('.popular .swiper-wrapper')
+let popularMoviesSwiper = document.querySelector('.popular .swiper')
+let upcomingMovies = document.querySelector(".wantedUpcomming .swiper-wrapper");
+let upcomingMoviesSwiper = document.querySelector(".wantedUpcomming .swiper");
 let btn = document.querySelector('.btn')
 const img_ip = import.meta.env.VITE_IMAGE_URL
 const video_url = import.meta.env.VITE_VIDEO_URL
@@ -67,8 +69,8 @@ loadEvents();
 
 
 renderPopularSelector(popularMoviesSelector);
-renderPopularMovies(popularMovies)
-
+renderSwiperMovies(popularMovies, popularMoviesSwiper, "/movie/popular");
+renderSwiperMovies(upcomingMovies, upcomingMoviesSwiper, "/movie/upcoming");
 
 
 actor_interval.forEach((element) => {

@@ -1,12 +1,7 @@
 import { getData } from "./http";
 
-export async function genresList(ids) {
-    let genres = [];
-    let response = await getData("/genre/movie/list");
-    for (const genre of response.data.genres) {
-        genres.push(genre);
-    }
-
+export async function genresList(ids, genres) {
+    
     let returnNames = [];
 
     for (const id of ids) {

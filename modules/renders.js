@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { getData } from "./http";
-import { reload } from "./ui";
+
 import kinoareaLogo from "/img/kinoarea_logo.svg";
 import searchIcon from "/img/search.svg";
 import { genresList } from "./helpers";
@@ -333,14 +333,27 @@ export async function renderPopularSelector(place) {
     }
 }
 
-export async function renderPopularMovies(place) {
+/**
+ * Renders popular movies in a specified place using a swiper.
+ *
+ * @param {HTMLElement} place - The element where the movies will be rendered.
+ * @param {HTMLElement} swiperPlace - The element where the swiper will be initialized.
+ * @return {Promise<void>} Returns a promise that resolves when the movies are rendered.
+ */
+export async function renderSwiperMovies(place, swiperPlace, searchPlace) {
     place.innerHTML = "";
 
     let data = [];
 
     for (let i = 0; i < 3; i++) {
-        let response = await getData("/movie/popular?page=" + (i + 1));
+        let response = await getData(`${searchPlace}?page=${i + 1}`);
         data.push(...response.data.results);
+    }
+
+    let genres = [];
+    let response = await getData("/genre/movie/list");
+    for (const genre of response.data.genres) {
+        genres.push(genre);
     }
 
     for (const movie of data) {
@@ -355,7 +368,8 @@ export async function renderPopularMovies(place) {
         let info = document.createElement("div");
         let title = document.createElement("h3");
         let genre = document.createElement("p");
-        // let genres = await genresList(movie.genre_ids);
+
+        let genresToPaste = await genresList(movie.genre_ids, genres);
 
         li.classList.add("swiper-slide");
         overlay.classList.add("overlay");
@@ -372,7 +386,7 @@ export async function renderPopularMovies(place) {
         title.classList.add("title");
         title.innerHTML = movie.title;
         genre.classList.add("genres");
-        // genre.innerHTML = genres.join(", ");
+        genre.innerHTML = genresToPaste.join(", ");
 
         place.append(li);
         li.append(img_wrapper, info);
@@ -402,7 +416,7 @@ export async function renderPopularMovies(place) {
         };
     }
 
-    let swiper = new Swiper(".swiper", {
+    let swiper = new Swiper(swiperPlace, {
         slidesPerView: 4,
         slidesPerGroup: 4,
         direction: "horizontal",
@@ -436,8 +450,35 @@ export async function renderPopularMovies(place) {
             type: "fraction",
         },
         navigation: {
-            nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
         },
     });
+}
+
+export async function renderSwiperPosters(place, swiperPlace, searchPlace) {
+    place.innerHTML = "";
+
+    for (let i = 0; i < 6; i++) {
+        let imgPath = "/img/movie/image.png"
+        let slider = document.createElement("div");
+        let img = document.createElement("img");
+
+        slider.classList.add("swiper-slide");
+        img.classList.add("swiper-lazy");
+
+        img.src = imgPath;
+        img.alt = "Poster";
+
+        place.append(slider);
+        slider.append(img)
+    }
+
+    let swiper = new Swiper(swiperPlace, {
+        slidesPerView: 4,
+        slidesPerGroup: 1,
+        direction: "horizontal",
+
+        spaceBetween: 22.4,
+    })
 }
