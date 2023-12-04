@@ -15,6 +15,12 @@
     gap: 8px;
 }
 
+.cont {
+    background-image: url('./public/img/А\ 1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 main img {
     width: 300px;
     object-fit: contain;
@@ -130,8 +136,7 @@ main img {
     align-items: center;
     flex-direction: row;
     gap: 20px;
-    width: 1200px;
-    padding: 50px 0;
+    padding: 20px;
 }
 
 .genres_box h1 {
@@ -250,7 +255,7 @@ main img {
     }
 }
 
-.tr_main{
+.tr_main {
     margin-bottom: 50px;
 }
 
@@ -265,6 +270,7 @@ main img {
 
     .tr_m {
         position: relative;
+
         img {
             all: unset;
             width: 300px;
@@ -287,4 +293,233 @@ main img {
 
 .btn {
     margin-bottom: 100px;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    h2 {
+        color: white;
+        font-size: 50px;
+        font-weight: 900;
+    }
+
+    .ul_fees {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .contry {
+            color: #6D717D;
+            font-size: 25px;
+            font-weight: 900;
+        }
+
+        .contry_active {
+            color: #FFF;
+        }
+    }
+
+    hr {
+        width: 100px;
+    }
+
+}
+
+.wraper {
+    background-color: #1D3AA0E5;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.cnter {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    color: #FFF;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    .img_area {
+        object-fit: cover;
+        width: 30px;
+    }
+
+}
+
+.footer_descript {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .h2_footer {
+        color: #FFF;
+        text-align: center;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .p_footer {
+        color: #FFF;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140.2%;
+        margin-bottom: 16px;
+        width: 700px;
+    }
+
+    .form {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 20px;
+
+        .form_input {
+            width: 425px;
+            height: 41px;
+            border-radius: 10px;
+            background: #FFF;
+            padding: 10px;
+            border: none;
+        }
+
+        .form_btn {
+            width: 125px;
+            height: 41px;
+            border-radius: 10px;
+            background: #F2F60F;
+            border: none;
+            color: #151A26;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 166.5%;
+        }
+    }
+}
+
+.politic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .politic_strong {
+        color: #F2F60F;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140.2%;
+        text-decoration-line: underline;
+        cursor: pointer;
+    }
+}
+
+footer {
+    center {
+        padding: 20px;
+    }
+
+    .p {
+        text-align: center;
+        color: #6D717D;
+        margin-bottom: 20px;
+    }
+}
+
+.a {
+    margin-top: 130px;
+    color: #6D717D;
+    text-decoration: underline;
+}
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.icons_img {
+    width: 25px;
+    object-fit: contain;
+
+}
+
+.news {
+    padding: 30px;
+
+}
+
+.news_ul {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.news_ul li {
+    color: #FFF;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.movies_fess {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+.movies_fess img {
+    width: 120px;
+    object-fit: contain;
+}
+
+.movies_fess h3 {
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.movies_fess p {
+    color: #F2F60F;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.movi {
+    margin-top: 27px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.text_movi {
+    display: flex;
+    flex-direction: column;
+
 }

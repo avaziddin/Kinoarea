@@ -1,6 +1,6 @@
 import { loadEvents } from "./modules/events";
 import { getData } from "./modules/http";
-import { reload_genres } from "./modules/ui";
+import { footers, reload, reload_genres } from "./modules/ui";
 import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
 
@@ -17,6 +17,11 @@ const video_url = import.meta.env.VITE_VIDEO_URL
 
 
 let actor_interval = document.querySelectorAll('p')
+let contry_active = document.querySelectorAll('li')
+let actors_name_block = document.querySelectorAll('.actors_name_block')
+let footer = document.querySelector('footer .container')
+
+
 
 renderHeader();
 
@@ -30,7 +35,7 @@ function showTrailer(data) {
 
 getData('/discover/movie')
 	.then(res => {
-		for(let item of res.data.results) {
+		for (let item of res.data.results) {
 			let trailer_block = document.createElement('div')
 			let img = document.createElement('img')
 			let p = document.createElement('p')
@@ -47,7 +52,7 @@ getData('/discover/movie')
 				getData(`/movie/${item.id}/videos`)
 					.then(res => {
 						let video = res.data.results.find(el => el.type === 'Trailer')
-						if(video) {
+						if (video) {
 							showTrailer(video)
 						} else {
 							trailer_block.classList.add('no-video')
@@ -57,14 +62,19 @@ getData('/discover/movie')
 		}
 	})
 
-getData("/person/popular").then((res) => reload_actors(res?.data?.results));
+getData("/person/popular").then((res) => reload_actors(res?.data?.results, actors_name_block));
+
+getData("/movie/now_playing").then((res) => reload(res?.data?.results.slice(0, 8), ul));
 
 
+btn.onclick = () => {
+	getData("/movie/now_playing").then((res) => reload(res?.data?.results, ul));
+}
 
 
 loadEvents();
 
-
+footers()
 
 renderPopularSelector(popularMoviesSelector);
 renderPopularMovies(popularMovies)
@@ -77,5 +87,13 @@ actor_interval.forEach((element) => {
 			element.classList.remove("active_genre");
 		});
 		element.classList.add("active_genre");
+	};
+});
+contry_active.forEach((element) => {
+	element.onclick = () => {
+		contry_active.forEach((element) => {
+			element.classList.remove("contry_active");
+		});
+		element.classList.add("contry_active");
 	};
 });
