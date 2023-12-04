@@ -1,7 +1,7 @@
 import { getData } from "./http"
 
 const img_ip = import.meta.env.VITE_IMAGE_URL
-
+let id = location.search.split('=').at(-1)
 
 export function reload(arr, place) {
   place.innerHTML = "";
@@ -24,7 +24,7 @@ export function reload(arr, place) {
     img.src = img_ip + item.poster_path;
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
-    a.href = "/";
+    a.href = "/pages/movie/?id=" + item.id;
 
     div.append(img)
     li.append(div, span, rating, button);
@@ -41,14 +41,6 @@ export function reload(arr, place) {
       button.classList.remove("btn_flex");
     };
 
-    getData(`/movie/${item.id}/images`)
-      .then(res => {
-        let backdrop_path = res.data.backdrops[0].file_path;
-        console.log(backdrop_path);
-        place.style.backgroundImage = backdrop_path
-
-      }
-      )
   }
 }
 
