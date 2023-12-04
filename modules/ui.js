@@ -24,7 +24,7 @@ export function reload(arr, place) {
     img.src = img_ip + item.poster_path;
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
-    a.href = "/";
+    a.href = "/pages/movie/?id=" + item.id;
 
     div.append(img)
     li.append(div, span, rating, button);

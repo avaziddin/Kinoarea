@@ -57,7 +57,6 @@ getData('/discover/movie')
 		}
 	})
 
-getData("/person/popular").then((res) => reload_actors(res?.data?.results));
 
 
 

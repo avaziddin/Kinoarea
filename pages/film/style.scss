@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1E2538;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.first_section {
+
+
+    .film {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        padding-top: 100px;
+        margin-bottom: 100px;
+
+    }
+
+
+    .bg_film {
+        background: url(../../public/img/poster.png) no-repeat center / cover;
+        width: 404px;
+        height: 559px;
+    }
+
+    .film_title {
+
+        .now {
+            color: #4F5B7C;
+            font-family: Qanelas;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 168.7%;
+            margin-bottom: 3px;
+            /* 26.992px */
+
+            span {
+                color: white;
+                font-family: Qanelas;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 168.7%;
+                /* 26.992px */
+            }
+
+        }
+
+        h2 {
+            color: #FFF;
+            font-family: Qanelas;
+            font-size: 65px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: normal;
+        }
+
+        .eng_t {
+            color: #FFF;
+            font-family: Qanelas;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            margin-bottom: 10px;
+
+        }
+
+        .rating {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .item_r {
+
+
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Qanelas;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+
+                .count {
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Qanelas;
+                    font-size: 13px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    width: 52px;
+                    height: 52px;
+                    background-color: rgba(75, 203, 54, 0.30);
+                    border: 5px;
+                    border: 10px solid rgb(3, 184, 3);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 6px;
+                    margin-bottom: 3px;
+                }
+            }
+
+        }
+
+        .dscr {
+            color: #FFF;
+            font-family: Qanelas;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 166.5%;
+            margin-bottom: 30px;
+            /* 33.3px */
+        }
+
+        button {
+            width: 260px;
+            height: 71px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 2px solid #FFF;
+            background: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+
+            a {
+                color: #FFF;
+                font-family: Qanelas;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 166.5%;
+                /* 29.97px */
+                text-decoration: 0;
+            }
+        }
+    }
+}
+
+.dscr_film {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.item_dscr {
+    display: flex;
+    gap: 50px;
+
+
+    ul {
+        li {
+            color: rgba(255, 255, 255, 0.90);
+            font-family: Qanelas;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            margin-bottom: 10px;
+            list-style-type: none;
+        }
+    }
+
+    .sec_ul {
+        li {
+            color: #F2F60F;
+            font-family: Qanelas;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration-line: underline;
+        }
+    }
+}
