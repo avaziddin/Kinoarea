@@ -1,12 +1,19 @@
-import { renderHeader, renderSwiperMovies, renderSwiperPosters } from "../../modules/renders";
+import { renderFrames, renderHeader, renderNames, renderSwiperMovies, renderSwiperPosters } from "../../modules/renders";
+const id = location.search.split("=")[1];
+if (id) {
+    console.log(id);
+} else {
+    location.assign("/");
+}
 renderHeader();
 
 let postersPlace = document.querySelector(".posters .swiper-wrapper");
 let postersPlaceSwiper = document.querySelector(".posters .swiper");
-let sequelsPlace = document.querySelector(".sequels .swiper-wrapper");
-let sequelsPlaceSwiper = document.querySelector(".sequels .swiper");
+let framesPlace = document.querySelector(".frames .grid");
 let samePlace = document.querySelector(".sameMovies .swiper-wrapper");
 let samePlaceSwiper = document.querySelector(".sameMovies .swiper");
-renderSwiperPosters(postersPlace, postersPlaceSwiper, "");
-renderSwiperMovies(sequelsPlace, sequelsPlaceSwiper, "/movie/top_rated");
-renderSwiperMovies(samePlace, samePlaceSwiper, "/movie/top_rated");
+
+renderSwiperPosters(postersPlace, postersPlaceSwiper, `/movie/${id}/images?language=ru`);
+renderFrames(framesPlace, `/movie/${id}/images`);
+renderSwiperMovies(samePlace, samePlaceSwiper, `/movie/${id}/similar?language=ru`);
+renderNames(`[data-name]`, `/movie/${id}?language=ru`);

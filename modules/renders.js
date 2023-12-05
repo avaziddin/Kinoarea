@@ -10,6 +10,8 @@ import { getData } from "./http";
 import kinoareaLogo from "/img/kinoarea_logo.svg";
 import searchIcon from "/img/search.svg";
 import { genresList } from "./helpers";
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -394,7 +396,7 @@ export async function renderSwiperMovies(place, swiperPlace, searchPlace) {
         info.append(title, genre);
 
         button.onclick = () => {
-            alert(`Карточка фильма (Soon...) ${movie.title}`);
+            location.assign(`pages/movie/?id=${movie.id}`);
         };
 
         img_wrapper.onmouseenter = () => {
@@ -459,19 +461,28 @@ export async function renderSwiperMovies(place, swiperPlace, searchPlace) {
 export async function renderSwiperPosters(place, swiperPlace, searchPlace) {
     place.innerHTML = "";
 
-    for (let i = 0; i < 6; i++) {
-        let imgPath = "/img/movie/image.png"
+    const response = await getData(searchPlace);
+    let total = response.data.posters.length;
+
+    for (const poster of response.data.posters) {
+        let imgPath = import.meta.env.VITE_IMAGE_URL + poster.file_path;
         let slider = document.createElement("div");
         let img = document.createElement("img");
 
         slider.classList.add("swiper-slide");
+        slider.dataset.src = imgPath;
+        slider.dataset.fancybox = "posters";
         img.classList.add("swiper-lazy");
+
+        if (response.data.posters.indexOf(poster) == 3) {
+            slider.dataset["more"] = `+${total - 4}`;
+        }
 
         img.src = imgPath;
         img.alt = "Poster";
 
         place.append(slider);
-        slider.append(img)
+        slider.append(img);
     }
 
     let swiper = new Swiper(swiperPlace, {
@@ -480,5 +491,42 @@ export async function renderSwiperPosters(place, swiperPlace, searchPlace) {
         direction: "horizontal",
 
         spaceBetween: 22.4,
+    });
+
+    Fancybox.bind("[data-fancybox='posters']", {});
+}
+
+export async function renderFrames(place, searchPlace) {
+    place.innerHTML = "";
+
+    const response = await getData(searchPlace);
+    let total = response.data.backdrops.length;
+    for (const backr of response.data.backdrops) {
+        let imgPath = import.meta.env.VITE_IMAGE_URL + backr.file_path;
+        let item = document.createElement("div");
+        let img = document.createElement("img");
+
+        item.classList.add("item")
+        item.dataset.src = imgPath;
+        item.dataset.fancybox = "frames";
+        if (response.data.backdrops.indexOf(backr) == 5) {
+            item.dataset.more = `+${total - 6}`;
+        }
+        img.src = imgPath;
+        img.alt = "Backdrop";
+
+
+        place.append(item);
+        item.append(img);
+    }
+
+    Fancybox.bind("[data-fancybox='frames']", {});
+}
+
+export async function renderNames(selector, searchPlace) {
+    const responce = await getData(searchPlace);
+    console.log(responce);
+    document.querySelectorAll(selector).forEach((item) => {
+        item.innerHTML = responce.data.title;
     })
 }
