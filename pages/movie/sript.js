@@ -19,7 +19,10 @@ let budget = document.querySelector("#budget")
 let time = document.querySelector("#time")
 let release = document.querySelector("#release")
 let orig_l = document.querySelector("#orig_l")
+let body = document.querySelector(".film_bg")
 
+let save = document.querySelector(".save")
+let save_img = document.querySelector(".save img")
 
 
 
@@ -34,14 +37,17 @@ getData(`/movie/${id}/credits`)
         production.innerHTML = res.data.crew[0].name
         writer.innerHTML = res.data.crew[3].name
         cameraman.innerHTML = res.data.crew[2].name
-        rejis.innerHTML = res.data.crew[4].name
+        rejis.innerHTML = res.data.crew[1].name
     })
+
 
 getData(`/movie/${id}`)
     .then(res => {
         console.log(res);
 
 
+
+        body.style.backgroundImage = `url(${img_ip + res.data.backdrop_path})`
         img.style.backgroundImage = `url(${img_ip + res.data.poster_path})`
         title.innerHTML = res.data.original_title
         big_title.innerHTML = res.data.original_title
@@ -80,6 +86,29 @@ getData(`/movie/${id}`)
 
     })
 
+
+    
+    let likes = JSON.parse(localStorage.getItem("likes"))||[]
+
+    save.onclick = () => {
+    
+        
+
+        
+        if (likes.includes(id)) {
+            likes = likes.filter(el_id => el_id !== id)
+            localStorage.setItem('likes', JSON.stringify(likes))
+            save_img.src = "../../img/white_like.svg"
+
+            return
+        }
+        
+
+        save_img.src = "../../img/red_heart.svg"
+        likes.push(id)
+        localStorage.setItem('likes', JSON.stringify(likes));
+    };
+
 /*
 new Chart(ctx, {
 type: 'doughnut',
@@ -95,4 +124,5 @@ datasets: [{
 }]
 });
 */
+
 
