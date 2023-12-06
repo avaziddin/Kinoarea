@@ -1,4 +1,5 @@
 import { getData } from "./http";
+// import { reload_actor_page } from "../pages/actor/js/script";
 
 const img_ip = import.meta.env.VITE_IMAGE_URL;
 
@@ -24,9 +25,9 @@ export function reload(arr, place) {
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
 
-    let href = "/pages/movie/?id=" + item.id
+    let href = "/pages/movie/?id=" + item.id;
 
-    console.log({item});
+    console.log({ item });
     a.href = href;
 
     div.append(img);
@@ -46,7 +47,6 @@ export function reload(arr, place) {
     // button.onclick = () => {
     // 	window.location.href = `https://www.themoviedb.org/movie/${item.id}`
     // }
- 
   }
 }
 
@@ -132,6 +132,7 @@ export function reload_actors(arr, place) {
       actors_name_block_three
     );
     actors_name_block_right.append(actors_name_block_place);
+
   }
 }
 
@@ -166,4 +167,29 @@ export function reload_genres(arr, place, btn) {
       };
     };
   }
+}
+
+export function reload_actor_page(arr, place) {
+  
+  let actor_name_head = document.querySelector(".actor_name_head");
+  let actor_name = document.querySelector(".actor_name");
+  let actor_name_second = document.querySelector(".actor_name_second");
+  let actor_img = document.querySelector(".actor_img");
+  let date_of_birth = document.querySelector(".date_of_birth");
+  let known_for = document.querySelector(".known_for");
+  let place_of_birth = document.querySelector(".place_of_birth");
+  let movie_amount = document.querySelector(".movie_amount");
+  
+    actor_name_second.innerHTML = arr[0].known_for[0].original_name
+    actor_name.innerHTML = arr[0].name
+    actor_name_head.innerHTML = arr[0].original_name
+    actor_img.src =img_ip + arr[0].profile_path 
+    date_of_birth.innerHTML = arr[0].original_name
+    date_of_birth.innerHTML = arr[0].known_for[2].release_date
+    known_for.innerHTML = arr[0].known_for_department
+    place_of_birth.innerHTML = arr[0].known_for[0].origin_country
+    movie_amount.innerHTML = arr[0].known_for[0].vote_average
+    console.log(arr);
+
+
 }

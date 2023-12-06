@@ -23,9 +23,15 @@ body {
     align-items: center;
     gap: 50px;
     .actor_profile_left {
-      width: 395px;
-      height: 540px;
-      object-fit: contain;
+     
+
+      .actor_img {
+        width: 395px;
+        height: 540px;
+        object-fit: contain;
+        border-radius: 10px;
+
+      }
     }
     .actor_profile_right {
       display: flex;
@@ -49,7 +55,7 @@ body {
             color: white;
           }
         }
-        h1 {
+        a {
           padding: 10px 0 0;
           font-weight: 900;
           font-size: 50px;

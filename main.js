@@ -7,6 +7,7 @@ import {
   renderPopularSelector,
 } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
+import { reload_actor_page } from "./modules/ui";
 
 const ul = document.querySelector("ul");
 let genre = document.querySelectorAll("p");
@@ -20,6 +21,9 @@ const img_ip = import.meta.env.VITE_IMAGE_URL;
 const video_url = import.meta.env.VITE_VIDEO_URL;
 
 let actor_interval = document.querySelectorAll("p");
+
+
+
 
 renderHeader();
 

@@ -25,11 +25,12 @@ body {
   align-items: center;
   gap: 50px;
 }
-.actor_block .actor_profile .actor_profile_left {
+.actor_block .actor_profile .actor_profile_left .actor_img {
   width: 395px;
   height: 540px;
   -o-object-fit: contain;
      object-fit: contain;
+  border-radius: 10px;
 }
 .actor_block .actor_profile .actor_profile_right {
   display: flex;
@@ -54,7 +55,7 @@ body {
 .actor_block .actor_profile .actor_profile_right .actor_profile_right_top .mini_block .active_ac_prof {
   color: white;
 }
-.actor_block .actor_profile .actor_profile_right .actor_profile_right_top h1 {
+.actor_block .actor_profile .actor_profile_right .actor_profile_right_top a {
   padding: 10px 0 0;
   font-weight: 900;
   font-size: 50px;
