@@ -24,7 +24,7 @@ export function reload(arr, place) {
     img.src = img_ip + item.poster_path;
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
-    a.href = "/pages/movie/?id=" + item.id;
+    a.href = "/pages/news_description/?id=" + item.id;
 
     div.append(img)
     li.append(div, span, rating, button);
@@ -91,7 +91,7 @@ export function reload_actors(arr, place) {
   actor_block_name.innerHTML = arr[0].original_name
   actor_block_name_two.innerHTML = arr[1].original_name
 
-  actor_block_age.innerHTML = arr[0].known_for[2].vote_average
+  actor_block_age.innerHTML = arr[0].known_for[2]
   actor_block_age_two.innerHTML = arr[1].known_for[2]
 
   // console.log(arr);
@@ -128,13 +128,6 @@ export function reload_actors(arr, place) {
     actors_name_block_right.append(actors_name_block_place);
   }
 }
-
-// export function reload_fees(arr, place) {
-//   for (let item of arr) {
-//     console.log(item)
-//   }
-// }
-
 
 export function reload_genres(arr, place, btn) {
   place.innerHTML = ""
@@ -252,7 +245,7 @@ export function footers() {
   a.innerHTML = 'Политика конфиденциальности'
   a.href = ''
 
-  main.append(footer)
+  main.after(footer)
   footer.prepend(container, wraper)
   container.append(wraper)
   wraper.append(center, footer_descript)
@@ -267,3 +260,4 @@ export function footers() {
   news.append(ul)
   ul.append(li, li2, li3, li4, li5, li6)
 }
+

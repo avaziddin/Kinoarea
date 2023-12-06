@@ -3,6 +3,7 @@ import { getData } from "./modules/http";
 import { footers, reload, reload_genres } from "./modules/ui";
 import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
+import axios from "axios";
 
 const ul = document.querySelector('ul')
 let genre = document.querySelectorAll("p");
