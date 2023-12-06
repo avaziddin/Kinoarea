@@ -67,6 +67,7 @@ loadEvents();
 
 
 renderPopularSelector(popularMoviesSelector);
+
 renderPopularMovies(popularMovies)
 
 

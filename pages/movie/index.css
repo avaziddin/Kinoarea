@@ -8,7 +8,6 @@
     width: 100%;
     padding: 30px 50px 30px 100px;
     background: #1E2538;
-    height: 120vh;
 }
 
 .title {
@@ -46,18 +45,18 @@
     flex-direction: column;
     gap: 10px;
 }
-.box h2 {
+.boxh2 {
     color: white;
     font-size: 17px;
 }
 
-.box p {
+.boxp {
     color: gray;
     font-size: 14px;
 
 }
 
-.box span {
+.boxspan {
     color:  rgba(242, 246, 15, 1);
     font-size: 15px;
 
