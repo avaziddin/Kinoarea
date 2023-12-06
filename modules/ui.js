@@ -160,3 +160,73 @@ export function reload_genres(arr, place, btn) {
 
   }
 }
+
+
+export function news_reload(arr, place) {
+  place.innerHTML = " "
+  let num = 0
+  for(let item of arr){
+    if(num==17){
+      num=0
+    }
+    
+    let news_box = document.createElement('div')
+    let new_info_box = document.createElement('div')
+    let p_new = document.createElement('p')
+    let new_details = document.createElement('div')
+    let new_date_p = document.createElement('p')
+    let view_box = document.createElement('div')
+    let new_views_img = document.createElement('img')
+    let new_views_p = document.createElement('p')
+    let comment_box = document.createElement('div')
+    let new_comment_img = document.createElement('img')
+    let new_comment_p = document.createElement('p')
+    let new_title = document.createElement('p')
+
+    news_box.classList.add('news_box')
+    news_box.classList.add(`${num}`)
+    if(num==3){
+      news_box.classList.add('four')
+    } else if(num==6 ){
+      news_box.classList.add('seven')
+    } else if(num==10 ){
+      news_box.classList.add('nine')
+    } else if(num==13 ){
+      news_box.classList.add('twelve')
+    }
+
+    new_info_box.classList.add('new_info_box')
+    p_new.classList.add('p_new')
+    new_details.classList.add('new_details')
+    new_date_p.classList.add('new_date_p')
+    view_box.classList.add('view_box')
+    new_views_img.classList.add('new_views_img')
+    new_views_p.classList.add('new_views_p')
+    comment_box.classList.add('comment_box')
+    new_comment_img.classList.add('new_comment_img')
+    new_comment_p.classList.add('new_comment_p')
+    new_title.classList.add('new_title')
+    p_new.innerHTML = 'Новость'
+    new_date_p.innerHTML = item.publishedAt.split('T')[0]
+    new_views_img.src = '/Kinoarea/public/img/eyee.png'
+    new_views_p.innerHTML = '120'
+    new_comment_img.src = '/Kinoarea/public/img/comment 1.png'
+    new_comment_p.innerHTML = '9'
+    new_title.innerHTML = item.title
+    news_box.style.background = `url(${item.urlToImage}) center no-repeat`
+    news_box.style.backgroundSize = 'cover'
+
+    place.append(news_box)
+    news_box.append(new_info_box)
+    new_info_box.append(p_new,new_details, new_title)
+    new_details.append(new_date_p, view_box, comment_box)
+    view_box.append(new_views_img, new_views_p)
+    comment_box.append(new_comment_img, new_comment_p)
+    num++
+
+
+    new_info_box.onclick = () =>{
+      
+    }
+  }
+}

@@ -16,3 +16,14 @@ export async function getData(path) {
         console.log({ error: e });
     }
 }
+
+export async function getNews(path) {
+    try {
+        const res = await axios.get('https://newsapi.org/v2/everything?q=hollywood&apiKey=e01b196f3fb046bcb795a9ec1cb8b7b3')
+
+        return res
+    } catch (e) {
+        console.log({ error: e });
+    }
+}
+

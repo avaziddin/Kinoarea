@@ -1,5 +1,5 @@
 import { loadEvents } from "./modules/events";
-import { getData } from "./modules/http";
+import { getData, getNews } from "./modules/http";
 import { reload_genres } from "./modules/ui";
 import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
@@ -79,3 +79,8 @@ actor_interval.forEach((element) => {
 		element.classList.add("active_genre");
 	};
 });
+
+getNews()
+	.then(res=> {
+		console.log(res.data);
+	})
