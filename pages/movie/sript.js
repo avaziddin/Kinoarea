@@ -60,7 +60,7 @@ getData(`/movie/${id}`)
         const data = {
 
             datasets: [{
-                data: [res.data.popularity, 1000],
+                data: [res.data.vote_average, 10],
                 backgroundColor: [
                     'rgb(4,209,14)',
                     'rgb(255,255,255)',
