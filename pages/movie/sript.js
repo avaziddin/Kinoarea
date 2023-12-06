@@ -20,6 +20,8 @@ let time = document.querySelector("#time")
 let release = document.querySelector("#release")
 let orig_l = document.querySelector("#orig_l")
 let body = document.querySelector(".film_bg")
+let drawwer = document.querySelector("#drawwer")
+let montaj = document.querySelector("#montaj")
 
 let save = document.querySelector(".save")
 let save_img = document.querySelector(".save img")
@@ -34,10 +36,14 @@ console.log(id);
 getData(`/movie/${id}/credits`)
     .then(res => {
 
-        production.innerHTML = res.data.crew[0].name
+        console.log(res);
+        production.innerHTML = res.data.cast[0].name
         writer.innerHTML = res.data.crew[3].name
         cameraman.innerHTML = res.data.crew[2].name
-        rejis.innerHTML = res.data.crew[1].name
+        rejis.innerHTML = res.data.crew[10].name
+        drawwer.innerHTML = res.data.crew[9].name
+        montaj.innerHTML = res.data.crew[16].name
+
     })
 
 
