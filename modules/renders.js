@@ -143,20 +143,27 @@ function renderHeaderSearch(place) {
 
     searchButton.onclick = () => {
         let search = document.querySelector(".modal__search");
-        let overlay = document.querySelector(".overlay");
+        let overlay = document.querySelector(".overlay-modal");
         let closeButton = search.querySelector(".close");
         let searchForm = search.querySelector("form");
 
-        searchForm.onsubmit = (e) => {
-            e.preventDefault();
-
-            search.classList.remove("show");
-            overlay.classList.remove("overlay-open");
-
-            alert("Поиск (Soon...)");
-        };
         search.classList.add("show");
         overlay.classList.add("overlay-open");
+
+        searchForm.onsubmit = async (e) => {
+            e.preventDefault();
+
+            // search.classList.remove("show");
+            // overlay.classList.remove("overlay-open");
+
+            let formData = new FormData(searchForm);
+            let query = formData.get("searchQuery");
+            const Search = await getData(`/search/multi?query=${query}`);
+            console.log(Search);
+
+            renderSearchResults(Search.data.results);
+        };
+        
 
         overlay.onclick = () => {
             search.classList.remove("show");
@@ -171,7 +178,7 @@ function renderHeaderSearch(place) {
 
     loginButton.onclick = () => {
         let login = document.querySelector(".modal__login");
-        let overlay = document.querySelector(".overlay");
+        let overlay = document.querySelector(".overlay-modal");
         let closeButton = login.querySelector(".close");
 
         let loginForm = login.querySelector("form");
@@ -189,7 +196,7 @@ function renderHeaderSearch(place) {
             login.classList.remove("show");
 
             let register = document.querySelector(".modal__register");
-            let overlay = document.querySelector(".overlay");
+            let overlay = document.querySelector(".overlay-modal");
             let closeButton = register.querySelector(".close");
             let registerForm = register.querySelector("form");
 
@@ -218,7 +225,7 @@ function renderHeaderSearch(place) {
             login.classList.remove("show");
 
             let forgot = document.querySelector(".modal__forgot__password");
-            let overlay = document.querySelector(".overlay");
+            let overlay = document.querySelector(".overlay-modal");
             let closeButton = forgot.querySelector(".close");
             let forgotFormRecover = forgot.querySelector(
                 "[name='recoverPassword']"
@@ -299,6 +306,90 @@ function renderHeaderSearch(place) {
 //         };
 //     }
 // }
+
+function renderSearchResults(data) {
+    let moviePlace = document.querySelector(".search__list__films");
+    let actorPlace = document.querySelector(".search__list__actors");
+
+    moviePlace.innerHTML = "";
+    actorPlace.innerHTML = "";
+    
+    let movies = document.createElement("h1");
+    movies.innerHTML = "Фильмы";
+    moviePlace.append(movies);
+    
+    let actors = document.createElement("h1");
+    actors.innerHTML = "Персоны";
+    actorPlace.append(actors);
+    
+    for (const item of data) {
+        if (item.media_type == "movie") {
+            renderSearchMovie(item, moviePlace);
+        } else if (item.media_type == "person") {
+            renderSearchActor(item, actorPlace);
+        }
+    }
+}
+
+function renderSearchMovie(item, place) {
+    let li = document.createElement("li");
+    let img = document.createElement("img");
+    let info = document.createElement("div");
+    let title = document.createElement("h2");
+    let originalTitle = document.createElement("h3");
+    let genres = document.createElement("h4");
+    let rating = document.createElement("span");
+
+    li.classList.add("search__item");
+    
+    if (item.poster_path == null) {
+        img.src = "/img/no-poster.png";
+    } else {
+        img.src = import.meta.env.VITE_IMAGE_URL + item.poster_path;
+    }
+
+    img.alt = item.name;
+
+    info.classList.add("info");
+
+    title.innerHTML = item.title;
+    originalTitle.innerHTML = item.original_title;
+    genres.innerHTML = item.genres;
+    rating.innerHTML = item.vote_average;
+    item.vote_average > 5.0
+        ? (rating.style.backgroundColor = "#4bcb36")
+        : (rating.style.backgroundColor = "#DA3434");
+
+    info.append(title, originalTitle, genres);
+    li.append(img, info, rating);
+    place.append(li);
+}
+
+function renderSearchActor(item, place) {
+    let li = document.createElement("li");
+    let img = document.createElement("img");
+    let info = document.createElement("div");
+    let name = document.createElement("h2");
+    let originalName = document.createElement("h3");
+    let role = document.createElement("h4");
+    li.classList.add("search__item");
+    if (item.profile_path == null) {
+        img.src = "/img/no-avatar.png";
+    } else {
+        img.src = import.meta.env.VITE_IMAGE_URL + item.profile_path;
+    }
+    img.alt = item.name;
+
+    info.classList.add("info");
+
+    name.innerHTML = item.name;
+    originalName.innerHTML = item.original_name;
+    role.innerHTML = item.known_for_department;
+
+    info.append(name, originalName, role);
+    li.append(img, info);
+    place.append(li);
+}
 
 export async function renderPopularSelector(place) {
     place.innerHTML = "";
@@ -506,7 +597,7 @@ export async function renderFrames(place, searchPlace) {
         let item = document.createElement("div");
         let img = document.createElement("img");
 
-        item.classList.add("item")
+        item.classList.add("item");
         item.dataset.src = imgPath;
         item.dataset.fancybox = "frames";
         if (response.data.backdrops.indexOf(backr) == 5) {
@@ -514,7 +605,6 @@ export async function renderFrames(place, searchPlace) {
         }
         img.src = imgPath;
         img.alt = "Backdrop";
-
 
         place.append(item);
         item.append(img);
@@ -528,5 +618,5 @@ export async function renderNames(selector, searchPlace) {
     console.log(responce);
     document.querySelectorAll(selector).forEach((item) => {
         item.innerHTML = responce.data.title;
-    })
+    });
 }

@@ -9,3 +9,4 @@ function popularMoviesSelectorScroll(event) {
     event.preventDefault();
     this.scrollLeft += event.deltaY;
 }
+

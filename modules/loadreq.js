@@ -9,7 +9,7 @@
 function makeSearch() {
     // Create overlay element
     const overlay = document.createElement("div");
-    overlay.classList.add("overlay");
+    overlay.classList.add("overlay-modal");
 
     // Create modal__search
     const modalSearch = document.createElement("div");

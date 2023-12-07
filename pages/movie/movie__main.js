@@ -7,6 +7,14 @@ if (id) {
 }
 renderHeader();
 
+function onLike() {
+    if ((JSON.parse(localStorage.getItem("likes")) || []).includes(id)) return;
+
+    let data = [...(JSON.parse(localStorage.getItem("likes")) || []), id];
+    localStorage.setItem("likes", JSON.stringify(data));
+    console.log(data);
+}
+
 let postersPlace = document.querySelector(".posters .swiper-wrapper");
 let postersPlaceSwiper = document.querySelector(".posters .swiper");
 let framesPlace = document.querySelector(".frames .grid");

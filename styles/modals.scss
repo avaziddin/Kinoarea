@@ -1,4 +1,4 @@
-.overlay {
+.overlay-modal {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
@@ -189,6 +189,7 @@
         flex-direction: column;
 
         padding-top: 20px;
+        overflow-y: scroll;
 
         h1 {
             display: flex;
@@ -264,6 +265,101 @@
                 height: 52px;
                 flex-shrink: 0;
                 border: none;
+            }
+        }
+
+        .search__results {
+            ul {
+                list-style: none;
+                width: 100%;
+
+                margin-top: 25px;
+
+                h1 {
+                    all: unset;
+
+                    color: #fff;
+                    font-family: Qanelas;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                }
+
+                li {
+                    width: 100%;
+
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    gap: 18px;
+
+                    width: 815px;
+                    height: 137px;
+
+                    img {
+                        width: 79px;
+                        height: 113px;
+
+                        border-radius: 10px;
+                        background: #1e2538;
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+
+                        gap: 5px;
+                    }
+
+                    h2 {
+                        color: #fff;
+                        font-family: Qanelas;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+
+                    h3 {
+                        color: rgba(255, 255, 255, 0.7);
+                        font-family: Qanelas;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+
+                    h4 {
+                        color: #f2f60f;
+                        font-family: Qanelas;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                    }
+
+                    span {
+                        width: 63px;
+                        height: 33px;
+                        border-radius: 5px;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        margin-left: auto;
+
+                        color: #fff;
+                        text-align: center;
+                        font-family: Qanelas;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                    }
+                }
             }
         }
     }
