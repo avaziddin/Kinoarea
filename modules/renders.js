@@ -108,7 +108,7 @@ function renderHeaderMenu(place) {
         "Актёры",
         "Новости",
         "Подборки",
-        "Категории",
+        "Понравившиеся",
     ];
     for (const item of menuItems) {
         let menuItem = document.createElement("li");
@@ -117,6 +117,11 @@ function renderHeaderMenu(place) {
 
         menuItem.onclick = () => {
             console.log(item);
+            if(item == 'Новости'){
+               document.location.href = '/pages/news/index.html'
+            } else if(item == 'Понравившиеся'){
+                document.location.href = '/pages/liked_movies/index.html'
+             } 
         };
     }
     menu.classList.add("menu");
@@ -124,6 +129,7 @@ function renderHeaderMenu(place) {
 
     place.append(menu);
     menu.append(menuList);
+    
 }
 
 function renderHeaderSearch(place) {

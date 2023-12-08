@@ -24,7 +24,7 @@ export function reload(arr, place) {
     img.src = img_ip + item.poster_path;
     rating.innerHTML = item.vote_average;
     a.innerHTML = "Карточка фильма";
-    a.href = "/";
+    a.href = `/pages/movie/index.html?id=${item.id}`;
 
     div.append(img)
     li.append(div, span, rating, button);
@@ -165,12 +165,14 @@ export function reload_genres(arr, place, btn) {
 export function news_reload(arr, place) {
   place.innerHTML = " "
   let num = 0
-  for(let item of arr){
-    if(num==17){
-      num=0
+  for (let item of arr) {
+    if (num == 17) {
+      num = 0
     }
-    
+
     let news_box = document.createElement('div')
+    let news_bg = document.createElement('div')
+    let news_bg_blue = document.createElement('div')
     let new_info_box = document.createElement('div')
     let p_new = document.createElement('p')
     let new_details = document.createElement('div')
@@ -185,16 +187,18 @@ export function news_reload(arr, place) {
 
     news_box.classList.add('news_box')
     news_box.classList.add(`${num}`)
-    if(num==3){
+    if (num == 3) {
       news_box.classList.add('four')
-    } else if(num==6 ){
+    } else if (num == 6) {
       news_box.classList.add('seven')
-    } else if(num==10 ){
+    } else if (num == 10) {
       news_box.classList.add('nine')
-    } else if(num==13 ){
+    } else if (num == 13) {
       news_box.classList.add('twelve')
     }
 
+    news_bg.classList.add('news_bg')
+    news_bg_blue.classList.add('news_bg_blue')
     new_info_box.classList.add('new_info_box')
     p_new.classList.add('p_new')
     new_details.classList.add('new_details')
@@ -217,16 +221,19 @@ export function news_reload(arr, place) {
     news_box.style.backgroundSize = 'cover'
 
     place.append(news_box)
-    news_box.append(new_info_box)
-    new_info_box.append(p_new,new_details, new_title)
+    news_box.append(new_info_box, news_bg)
+    news_bg.append(news_bg_blue)
+    new_info_box.append(p_new, new_details, new_title)
     new_details.append(new_date_p, view_box, comment_box)
     view_box.append(new_views_img, new_views_p)
     comment_box.append(new_comment_img, new_comment_p)
     num++
 
-
-    new_info_box.onclick = () =>{
-      
+    news_box.onmouseenter = () => {
+      news_bg_blue.classList.add('news_bg_active')
+    }
+    news_box.onmouseleave = () => {
+      news_bg_blue.classList.remove('news_bg_active')
     }
   }
 }

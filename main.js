@@ -82,5 +82,4 @@ actor_interval.forEach((element) => {
 
 getNews()
 	.then(res=> {
-		console.log(res.data);
 	})
