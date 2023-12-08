@@ -12,6 +12,7 @@
 .liked {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
 }
 img{
     width: 470px;

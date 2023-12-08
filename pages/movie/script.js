@@ -50,12 +50,7 @@ like.onclick = () => {
 
 
 };
-
-
-
 const img_ip = import.meta.env.VITE_IMAGE_URL
-
-
 
 getData(`/movie/${id}/credits`)
     .then(res => {
@@ -74,9 +69,6 @@ getData(`/movie/${id}/credits`)
 getData(`/movie/${id}`)
     .then(res => {
         console.log(res);
-
-
-
         body.style.backgroundImage = `url(${img_ip + res.data.backdrop_path})`
         img.style.backgroundImage = `url(${img_ip + res.data.poster_path})`
         title.innerHTML = res.data.original_title
