@@ -3,6 +3,7 @@ import { getData } from "./modules/http";
 import { reload_genres } from "./modules/ui";
 import { renderHeader, renderPopularMovies, renderPopularSelector } from "./modules/renders";
 import { reload_actors } from "./modules/ui";
+import axios from "axios";
 
 const ul = document.querySelector('ul')
 let genre = document.querySelectorAll("p");
@@ -78,3 +79,28 @@ actor_interval.forEach((element) => {
 		element.classList.add("active_genre");
 	};
 });
+
+
+let search = document.querySelector("#searchQuery")
+
+search.onkeyup = (e) => {
+ let val = search.value
+
+ getData(`/search/multi?query=${val}`)
+	 .then(res => console.log(res))
+}
+
+function reload_search(arr , place) {
+place.innerHTML = ""
+
+	for(let item of arr){
+		let box = document.createElement("div")
+		let img_div = document.createElement("div")
+		let title_div = document.createElement("div")
+	}
+
+}
+
+
+
+

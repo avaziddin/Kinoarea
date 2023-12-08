@@ -1,5 +1,6 @@
 import Chart from 'chart.js/auto';
 import { getData } from "../../modules/http";
+import { renderHeader } from '../../modules/renders';
 
 let id = location.search.split("=")[1]
 let img = document.querySelector(".bg_film")
@@ -31,12 +32,11 @@ let save_img = document.querySelector(".save img")
 const img_ip = import.meta.env.VITE_IMAGE_URL
 
 
-console.log(id);
+
 
 getData(`/movie/${id}/credits`)
     .then(res => {
 
-        console.log(res);
         production.innerHTML = res.data.cast[0].name
         writer.innerHTML = res.data.crew[3].name
         cameraman.innerHTML = res.data.crew[2].name
@@ -49,9 +49,6 @@ getData(`/movie/${id}/credits`)
 
 getData(`/movie/${id}`)
     .then(res => {
-        console.log(res);
-
-
 
         body.style.backgroundImage = `url(${img_ip + res.data.backdrop_path})`
         img.style.backgroundImage = `url(${img_ip + res.data.poster_path})`
@@ -66,8 +63,6 @@ getData(`/movie/${id}`)
         release.innerHTML = res.data.release_date
         time.innerHTML = res.data.runtime + " мин"
         orig_l.innerHTML = res.data.spoken_languages[0].english_name
-
-
 
         const data = {
 
@@ -115,20 +110,6 @@ getData(`/movie/${id}`)
         localStorage.setItem('likes', JSON.stringify(likes));
     };
 
-/*
-new Chart(ctx, {
-type: 'doughnut',
-labels: [
-  'Red',
-  'Blue',
-  'Yellow'
-],
-datasets: [{
-  label: 'My First Dataset',
-  data: [300, 50, 100],
-  
-}]
-});
-*/
+
 
 
