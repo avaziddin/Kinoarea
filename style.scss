@@ -523,3 +523,44 @@ footer {
     flex-direction: column;
 
 }
+
+.movie_img {
+    width: 50px;
+    object-fit: cover;
+}
+
+.li_movie {
+    color: #FFF;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background: #1E2538;
+    width: 400px;
+    height: 80px;
+}
+
+.search__results {
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: start;
+    overflow-x: auto;
+}
+
+.search__list__actors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    overflow-x: auto;
+
+}
+
+.search__list__films {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+}

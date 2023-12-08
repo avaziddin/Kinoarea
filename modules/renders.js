@@ -21,6 +21,7 @@ String.prototype.capitalize = function () {
  * @param {none} - This function does not accept any parameters.
  * @return {none} - This function does not return any value.
  */
+
 export function renderHeader() {
     let place = document.body;
 
@@ -125,7 +126,11 @@ function renderHeaderMenu(place) {
     place.append(menu);
     menu.append(menuList);
 }
-
+const img_ip = import.meta.env.VITE_IMAGE_URL
+let searchQuery = document.querySelector('#searchQuery')
+// let search__results = document.querySelector('.search__results')
+let search__list__films = document.querySelector('.search__list__films')
+let search__list__actors = document.querySelector('.search__list__actors')
 function renderHeaderSearch(place) {
     let searchButton = document.createElement("a");
 
@@ -145,13 +150,64 @@ function renderHeaderSearch(place) {
         let closeButton = search.querySelector(".close");
         let searchForm = search.querySelector("form");
 
+
+        console.log(search__list__films);
         searchForm.onsubmit = (e) => {
             e.preventDefault();
+            let value = searchQuery.value
+            getData("/search/multi?query=" + value)
+                .then(res => {
+                    console.log(res)
+                    search__list__actors.innerHTML = ""
+                    search__list__films.innerHTML = ""
+                    for (let item of res.data.results) {
+                        let li_movies = document.createElement('li')
+                        let img = document.createElement('img')
+                        let img_person = document.createElement('img')
+                        let li_person = document.createElement('li')
+                        let rating = document.createElement('p')
+                        let actor = document.createElement('p')
 
-            search.classList.remove("show");
-            overlay.classList.remove("overlay-open");
+                        li_movies.innerHTML = item.title
+                        img.src = img_ip + item.poster_path
+                        li_person.innerHTML = item.original_name
+                        rating.innerHTML = item.vote_average
+                        actor.innerHTML = item.known_for_department
+                        img_person.src = './public/img/Rectangle 2.png'
 
-            alert("Поиск (Soon...)");
+                        img.classList.add('movie_img')
+                        img_person.classList.add('movie_img')
+                        li_movies.classList.add('li_movie')
+                        li_person.classList.add('li_movie')
+
+                        if (item.vote_average > '5.0') {
+                            rating.style.background = 'green'
+                            rating.style.borderEndEndRadius = '10px'
+                            rating.style.padding = '10px'
+                        }
+                        if (item.vote_average < '5.0') {
+                            rating.style.background = 'red'
+                            rating.style.borderEndEndRadius = '10px'
+                            rating.style.padding = '10px'
+                        }
+
+                        if (item.media_type === 'movie') {
+                            search__list__films.append(li_movies)
+                            li_movies.prepend(img)
+                            li_movies.append(rating)
+
+                        }
+                        if (item.media_type === 'person') {
+                            search__list__actors.append(li_person)
+                            li_person.append(actor)
+                            li_person.prepend(img_person)
+                            li_person.style.padding = '15px'
+
+                        }
+                    }
+
+                })
+
         };
         search.classList.add("show");
         overlay.classList.add("overlay-open");

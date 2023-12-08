@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.liked {
+    display: flex;
+    gap: 30px;
+}
+img{
+    width: 470px;
+}

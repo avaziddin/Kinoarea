@@ -28,18 +28,22 @@ html {
 header {
   padding: 25px 0;
 }
+
 header .wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 header .wrap .logo {
   display: flex;
   align-items: center;
 }
+
 header .wrap .logo-title {
   padding-left: 6px;
 }
+
 header .wrap .logo-title .logo-kino {
   color: #3657cb;
   font-family: Qanelas;
@@ -48,6 +52,7 @@ header .wrap .logo-title .logo-kino {
   font-weight: 800;
   line-height: normal;
 }
+
 header .wrap .logo-title .logo-area {
   color: #fff;
   font-family: Qanelas;
@@ -56,11 +61,13 @@ header .wrap .logo-title .logo-area {
   font-weight: 800;
   line-height: normal;
 }
+
 header .wrap .menu-list {
   list-style: none;
   display: flex;
   gap: 50px;
 }
+
 header .wrap .menu-list li {
   color: #fff;
   font-family: Qanelas;
@@ -70,10 +77,12 @@ header .wrap .menu-list li {
   line-height: normal;
   cursor: pointer;
 }
+
 header .wrap .header-right {
   display: flex;
   gap: 15px;
 }
+
 header .wrap .header-right .login-button {
   width: 138px;
   height: 53px;
@@ -88,46 +97,55 @@ header .wrap .header-right .login-button {
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 166.5%; /* 26.64px */
+  line-height: 166.5%;
+  /* 26.64px */
 }
 
 .actors_box {
   padding: 100px 0;
 }
+
 .actors_box .actors_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px 0;
 }
+
 .actors_box .actors_header h1 {
   color: white;
   font-size: 50px;
   font-weight: 900;
 }
+
 .actors_box .actors_header .actors_header_intervals {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
 }
+
 .actors_box .actors_header .actors_header_intervals p {
   color: #6d717d;
   font-size: 25px;
   font-weight: 900;
 }
+
 .actors_box .actors_header .actors_header_intervals p:hover {
   color: rgb(204, 203, 203);
 }
+
 .actors_box .actors_header .actors_header_intervals .active_genre {
   color: white;
 }
+
 .actors_box .actors_blocks {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
+
 .actors_box .actors_blocks .actor_block_one,
 .actors_box .actors_blocks .actor_block_two {
   height: 444px;
@@ -140,6 +158,7 @@ header .wrap .header-right .login-button {
   position: relative;
   border-radius: 5px;
 }
+
 .actors_box .actors_blocks .actor_block_one .actor_pic,
 .actors_box .actors_blocks .actor_block_two .actor_pic {
   height: 444px;
@@ -147,8 +166,9 @@ header .wrap .header-right .login-button {
   border-radius: 5px;
   position: absolute;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 .actors_box .actors_blocks .actor_block_one h1,
 .actors_box .actors_blocks .actor_block_two h1 {
   color: #f2f60f;
@@ -157,11 +177,13 @@ header .wrap .header-right .login-button {
   z-index: 999;
   padding: 20px;
 }
+
 .actors_box .actors_blocks .actor_block_one .actors_names,
 .actors_box .actors_blocks .actor_block_two .actors_names {
   z-index: 999;
   padding: 0 20px 20px;
 }
+
 .actors_box .actors_blocks .actor_block_one .actors_names h2,
 .actors_box .actors_blocks .actor_block_two .actors_names h2 {
   color: white;
@@ -169,6 +191,7 @@ header .wrap .header-right .login-button {
   font-weight: 700;
   cursor: pointer;
 }
+
 .actors_box .actors_blocks .actor_block_one .actors_names h3,
 .actors_box .actors_blocks .actor_block_two .actors_names h3 {
   color: rgb(157, 156, 156);
@@ -176,12 +199,14 @@ header .wrap .header-right .login-button {
   font-weight: 600;
   cursor: pointer;
 }
+
 .actors_box .actors_blocks .actor_block_one .actors_names h4,
 .actors_box .actors_blocks .actor_block_two .actors_names h4 {
   color: #f2f60f;
   font-size: 15px;
   font-weight: 500;
 }
+
 .actors_box .actors_blocks .actors_name_block {
   height: 444px;
   width: 444px;
@@ -192,6 +217,7 @@ header .wrap .header-right .login-button {
   overflow-y: scroll !important;
   overflow-x: hidden !important;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info {
   display: flex;
   flex-direction: row;
@@ -199,6 +225,7 @@ header .wrap .header-right .login-button {
   gap: 20px;
   border-bottom: 2px solid #272f47;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info .actors_name_block_left {
   display: flex;
   justify-content: flex-start;
@@ -206,29 +233,34 @@ header .wrap .header-right .login-button {
   flex-direction: column;
   gap: 5px;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info .actors_name_block_left .actors_name_block_one {
   color: white;
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info .actors_name_block_left .actors_name_block_two {
   color: #3b486b;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info .actors_name_block_left .actors_name_block_age {
   color: #f2f60f;
   font-size: 14px;
   font-weight: 400;
 }
+
 .actors_box .actors_blocks .actors_name_block .actors_info .actors_name_block_right .actors_name_block_place {
   color: #f2f60f;
   font-size: 15px;
   font-weight: 600;
   padding: 25px 0;
 }
+
 .actors_box .actors_blocks .actors_name_block::-webkit-scrollbar {
   width: 0px;
 }
@@ -239,6 +271,7 @@ header .wrap .header-right .login-button {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
 }
+
 .overlay.overlay-open {
   display: block;
 }
@@ -250,6 +283,7 @@ header .wrap .header-right .login-button {
   display: none;
   transform: translate(-50%, -50%);
 }
+
 .modal__login .close {
   position: absolute;
   top: 20px;
@@ -258,6 +292,7 @@ header .wrap .header-right .login-button {
   background: none;
   border: none;
 }
+
 .modal__login .modal__wrapper {
   width: 815px;
   height: 562px;
@@ -268,6 +303,7 @@ header .wrap .header-right .login-button {
   align-items: center;
   flex-direction: column;
 }
+
 .modal__login .modal__wrapper h1 {
   color: #fff;
   font-family: Qanelas;
@@ -277,11 +313,13 @@ header .wrap .header-right .login-button {
   line-height: normal;
   margin-bottom: 34px;
 }
+
 .modal__login .modal__wrapper form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .modal__login .modal__wrapper form input {
   width: 422px;
   height: 67px;
@@ -294,9 +332,11 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   border: none;
 }
+
 .modal__login .modal__wrapper form .loginButton {
   width: 422px;
   height: 55px;
@@ -308,8 +348,10 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
 }
+
 .modal__login .modal__wrapper form .registerButton {
   width: 422px;
   height: 55px;
@@ -322,9 +364,11 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   border: none;
 }
+
 .modal__login .modal__wrapper form .forgotPassword {
   color: #3657cb;
   text-align: center;
@@ -332,9 +376,11 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   text-decoration-line: underline;
 }
+
 .modal__login .login_other {
   margin-top: 20px;
   display: flex;
@@ -342,6 +388,7 @@ header .wrap .header-right .login-button {
   align-items: center;
   gap: 20px;
 }
+
 .modal__login .login_other .login_via {
   width: 41px;
   height: 41px;
@@ -352,9 +399,11 @@ header .wrap .header-right .login-button {
   justify-content: center;
   align-items: center;
 }
+
 .modal__login .login_other .login_via[data-target=facebook] {
   background: #3657cb;
 }
+
 .modal__login .login_other span {
   color: #fff;
   font-size: 18px;
@@ -370,6 +419,7 @@ header .wrap .header-right .login-button {
   transform: translate(-50%, -50%);
   display: none;
 }
+
 .modal__search .close {
   position: absolute;
   top: 20px;
@@ -378,9 +428,10 @@ header .wrap .header-right .login-button {
   background: none;
   border: none;
 }
+
 .modal__search .modal__wrapper {
   width: 900px;
-  height: 562px;
+  height: fit-content;
   border-radius: 10px;
   background: #191e2e;
   display: flex;
@@ -389,14 +440,17 @@ header .wrap .header-right .login-button {
   flex-direction: column;
   padding-top: 20px;
 }
+
 .modal__search .modal__wrapper h1 {
   display: flex;
   align-items: center;
   margin-bottom: 77px;
 }
+
 .modal__search .modal__wrapper h1 p {
   padding-left: 6px;
 }
+
 .modal__search .modal__wrapper h1 .kino {
   color: #3657cb;
   font-family: Qanelas;
@@ -405,6 +459,7 @@ header .wrap .header-right .login-button {
   font-weight: 800;
   line-height: normal;
 }
+
 .modal__search .modal__wrapper h1 .area {
   color: #fff;
   font-family: Qanelas;
@@ -413,6 +468,7 @@ header .wrap .header-right .login-button {
   font-weight: 800;
   line-height: normal;
 }
+
 .modal__search .modal__wrapper form {
   display: flex;
   align-items: center;
@@ -424,6 +480,7 @@ header .wrap .header-right .login-button {
   background: #fff;
   padding-right: 15px;
 }
+
 .modal__search .modal__wrapper form input {
   width: 100%;
   height: 100%;
@@ -434,12 +491,15 @@ header .wrap .header-right .login-button {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 166.5%; /* 33.3px */
+  line-height: 166.5%;
+  /* 33.3px */
   border: none;
 }
+
 .modal__search .modal__wrapper form input::-webkit-search-cancel-button {
   display: none;
 }
+
 .modal__search .modal__wrapper form .searchSettings {
   display: flex;
   align-items: center;
@@ -448,6 +508,7 @@ header .wrap .header-right .login-button {
   background: none;
   cursor: pointer;
 }
+
 .modal__search .modal__wrapper form .searchButton {
   width: 55px;
   height: 52px;
@@ -463,6 +524,7 @@ header .wrap .header-right .login-button {
   display: none;
   margin-top: 100px;
 }
+
 .modal__register .close {
   position: absolute;
   top: 20px;
@@ -471,6 +533,7 @@ header .wrap .header-right .login-button {
   background: none;
   border: none;
 }
+
 .modal__register .modal__wrapper {
   width: 815px;
   border-radius: 10px;
@@ -481,6 +544,7 @@ header .wrap .header-right .login-button {
   flex-direction: column;
   padding-top: 41px;
 }
+
 .modal__register .modal__wrapper h1 {
   color: #fff;
   font-family: Qanelas;
@@ -490,12 +554,14 @@ header .wrap .header-right .login-button {
   line-height: normal;
   margin-bottom: 77px;
 }
+
 .modal__register .modal__wrapper form {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 20px;
 }
+
 .modal__register .modal__wrapper form input:not([type=checkbox]) {
   width: 422px;
   height: 67px;
@@ -505,11 +571,13 @@ header .wrap .header-right .login-button {
   background: #1e2538;
   border: none;
 }
+
 .modal__register .modal__wrapper form .agreements {
   display: flex;
   flex-direction: column;
   gap: 9px;
 }
+
 .modal__register .modal__wrapper form .agreements label {
   display: flex;
   align-items: center;
@@ -518,6 +586,7 @@ header .wrap .header-right .login-button {
   -moz-user-select: none;
   user-select: none;
 }
+
 .modal__register .modal__wrapper form .agreements label input {
   position: absolute;
   opacity: 0;
@@ -525,14 +594,17 @@ header .wrap .header-right .login-button {
   width: 0;
   height: 0;
 }
-.modal__register .modal__wrapper form .agreements label input:checked ~ .check {
+
+.modal__register .modal__wrapper form .agreements label input:checked~.check {
   border-radius: 2px;
   border: 1px solid #f2f60f;
   background: #f2f60f;
 }
-.modal__register .modal__wrapper form .agreements label input:checked ~ .check:after {
+
+.modal__register .modal__wrapper form .agreements label input:checked~.check:after {
   display: block;
 }
+
 .modal__register .modal__wrapper form .agreements label .check {
   height: 17px;
   width: 17px;
@@ -540,6 +612,7 @@ header .wrap .header-right .login-button {
   border-radius: 2px;
   position: relative;
 }
+
 .modal__register .modal__wrapper form .agreements label .check:after {
   content: "";
   width: 11px;
@@ -553,14 +626,17 @@ header .wrap .header-right .login-button {
   background: url("/img/check.svg") no-repeat center/contain;
   z-index: 5;
 }
+
 .modal__register .modal__wrapper form .agreements label p {
   color: #fff;
   font-family: Qanelas;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 140.2%; /* 21.03px */
+  line-height: 140.2%;
+  /* 21.03px */
 }
+
 .modal__register .modal__wrapper form .agreements label p a {
   color: #f2f60f;
   font-family: Qanelas;
@@ -570,6 +646,7 @@ header .wrap .header-right .login-button {
   line-height: 140.2%;
   text-decoration-line: underline;
 }
+
 .modal__register .modal__wrapper form .registerButton {
   width: 422px;
   height: 55px;
@@ -582,7 +659,8 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
 }
 
 .modal__forgot__password {
@@ -592,6 +670,7 @@ header .wrap .header-right .login-button {
   transform: translate(-50%, -50%);
   display: none;
 }
+
 .modal__forgot__password .close {
   position: absolute;
   top: 20px;
@@ -600,6 +679,7 @@ header .wrap .header-right .login-button {
   background: none;
   border: none;
 }
+
 .modal__forgot__password .modal__wrapper {
   width: 815px;
   height: 405px;
@@ -611,6 +691,7 @@ header .wrap .header-right .login-button {
   align-items: center;
   justify-content: center;
 }
+
 .modal__forgot__password .modal__wrapper h1 {
   color: #fff;
   font-family: Qanelas;
@@ -620,13 +701,16 @@ header .wrap .header-right .login-button {
   line-height: normal;
   margin-bottom: 34px;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] {
   display: none;
   flex-direction: column;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword].show {
   display: flex;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] input {
   width: 422px;
   height: 67px;
@@ -638,21 +722,26 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   border: 0;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] .checkCode {
   display: flex;
   align-items: center;
   gap: 13px;
   margin-top: 14px;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] .checkCode button {
   width: 203px;
   height: 67px;
@@ -664,13 +753,16 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   border: 0;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] .checkCode input {
   width: 206px;
   height: 67px;
 }
+
 .modal__forgot__password .modal__wrapper form[name=recoverPassword] .next {
   margin-top: 18px;
   border-radius: 10px;
@@ -683,17 +775,21 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
   border: 0;
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword] {
   display: none;
   flex-direction: column;
   gap: 16px;
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword].show {
   display: flex !important;
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword] input {
   width: 422px;
   height: 67px;
@@ -707,14 +803,18 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
-  line-height: 166.5%; /* 28.305px */
+  line-height: 166.5%;
+  /* 28.305px */
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword] input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword] input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
 .modal__forgot__password .modal__wrapper form[name=newPassword] .done {
   width: 422px;
   height: 55px;
@@ -726,5 +826,8 @@ header .wrap .header-right .login-button {
   font-size: 17px;
   font-style: normal;
   font-weight: 600;
-  line-height: 166.5%; /* 28.305px */
-}/*# sourceMappingURL=main.css.map */
+  line-height: 166.5%;
+  /* 28.305px */
+}
+
+/*# sourceMappingURL=main.css.map */
